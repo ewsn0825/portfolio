@@ -3,6 +3,17 @@ export default {
   content: ["./index.html", "./src/**/*.js", "./src/**/*.jsx", "./src/*.jsx"],
   theme: {
     extend: {
+      screens: {
+        phone: "390px",
+        tablet: "810px",
+        // => @media (min-width: 640px) { ... }
+
+        // laptop: "1024px",
+        // // => @media (min-width: 1024px) { ... }
+
+        desktop: "1200px",
+        // => @media (min-width: 1280px) { ... }
+      },
       fontFamily: {
         pre: ["Pretendard", "sans-serif"],
         baloo: ['"Baloo Bhai 2"', "sans-serif"],
