@@ -4,7 +4,7 @@ import logo2 from "@/assets/logo2.png";
 
 function NavBar() {
   return (
-    <div>
+    <div className="">
       <div className="flex justify-between items-center">
         <h1>
           <img src={logo2} alt="로고 이미지" className="w-12" />

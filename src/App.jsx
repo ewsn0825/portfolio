@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="font-noto  desktop:mx-14">
+    <div className="font-noto  desktop_lg:mx-14 desktop_md:mx-14 desktop_sm:mx-14">
       <NavBar />
       <p className="text-center">안녕하세요. 프론트엔드 개발자 이재호입니다.</p>
 

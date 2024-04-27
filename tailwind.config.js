@@ -4,14 +4,17 @@ export default {
   theme: {
     extend: {
       screens: {
-        phone: "390px",
-        tablet: "810px",
+        phone: "320px",
+        tablet: "768px",
         // => @media (min-width: 640px) { ... }
 
         // laptop: "1024px",
         // // => @media (min-width: 1024px) { ... }
 
-        desktop: "1200px",
+        desktop_sm: "1024px",
+        desktop_md: "1440px",
+        desktop_lg: "2560px",
+
         // => @media (min-width: 1280px) { ... }
       },
       fontFamily: {
