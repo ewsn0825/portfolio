@@ -4,16 +4,14 @@ export default {
   theme: {
     extend: {
       screens: {
-        phone: "320px",
+        mobile: "320px",
         tablet: "768px",
         // => @media (min-width: 640px) { ... }
 
         // laptop: "1024px",
         // // => @media (min-width: 1024px) { ... }
 
-        desktop_sm: "1024px",
-        desktop_md: "1440px",
-        desktop_lg: "2560px",
+        desktop: "1240px",
 
         // => @media (min-width: 1280px) { ... }
       },
