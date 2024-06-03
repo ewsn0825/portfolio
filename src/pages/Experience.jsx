@@ -1,9 +1,7 @@
-import React from "react";
-
 function Experience() {
   return (
-    <div className="flex gap-14 items-center mb-40">
-      <h2 className="border-t-2 border-t-black text-5xl font-semibold mt-3 mb-8 pt-5">
+    <div className="flex gap-14 items-center pt-[84px]">
+      <h2 className="border-t-2 border-t-black text-5xl font-semibold mb-8 pt-5">
         Experience
       </h2>
       <ul>
