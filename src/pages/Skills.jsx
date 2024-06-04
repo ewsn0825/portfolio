@@ -1,4 +1,3 @@
-import React from "react";
 
 import html from "@/assets/skill/HTML.svg";
 import css from "@/assets/skill/CSS.svg";
@@ -16,12 +15,12 @@ import { motion } from "framer-motion";
 
 function Skills() {
   return (
-    <div className="pt-[85px]">
-      <div className="border-t-2 border-t-black">
+    <div className="bg-yellow-400">
+      <div className="border-t-2 border-t-black desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto">
         <h2 className="text-4.5xl font-semibold mt-5 mb-8">Skills</h2>
-        <div className="flex justify-around items-start">
+        <div className="grid gap-10 desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 items-start">
           <motion.div
-            className="flex flex-col gap-10 items-center shadow-xl py-10 flex-[0.2] rounded-2xl"
+            className="flex flex-col gap-10 items-center shadow-xl py-10 rounded-2xl bg-white"
             whileHover={{ y: -15 }}
             transition={{
               type: "tween",
@@ -62,7 +61,7 @@ function Skills() {
             </ul>
           </motion.div>
           <motion.div
-            className="flex flex-col gap-10 items-center shadow-xl py-10 flex-[0.2] rounded-2xl"
+            className="flex flex-col gap-10 items-center shadow-xl py-10 rounded-2xl bg-white"
             whileHover={{ y: -15 }}
             transition={{
               type: "tween",
@@ -83,7 +82,7 @@ function Skills() {
             </ul>
           </motion.div>
           <motion.div
-            className="flex flex-col gap-10 items-center shadow-xl py-10 flex-[0.2] rounded-2xl"
+            className="flex flex-col gap-10 items-center shadow-xl py-10 rounded-2xl bg-white"
             whileHover={{ y: -15 }}
             transition={{
               type: "tween",

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import "./App.css";
 import NavBar from "./components/NavBar";
 import About from "./pages/About";
@@ -12,8 +10,10 @@ import { Element } from "react-scroll";
 function App() {
   return (
     <div className="font-noto">
+      <Element name="header"></Element>
       <NavBar />
-      <div className="desktop:w-[1240px] mx-auto desktop:p-5 flex flex-col desktop:gap-36">
+
+      <div className="mx-auto flex flex-col">
         <p className="text-center">
           안녕하세요. 프론트엔드 개발자 이재호입니다.
         </p>
