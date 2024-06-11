@@ -7,8 +7,8 @@ import mail from "@/assets/icon/mail.png";
 
 function About() {
   return (
-    <div className="">
-      <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto border-t-2 border-t-black">
+    <div className="pt-20">
+      <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto border-t-2 border-t-black desktop:px-8 ">
         <h2 className="desktop:text-6xl tablet:text-4.5xl font-semibold desktop:my-8 tablet:my-6 mobile:my-4">
           About
         </h2>

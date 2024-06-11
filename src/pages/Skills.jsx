@@ -1,4 +1,3 @@
-
 import html from "@/assets/skill/HTML.svg";
 import css from "@/assets/skill/CSS.svg";
 import js from "@/assets/skill/JavaScript.svg";
@@ -15,10 +14,10 @@ import { motion } from "framer-motion";
 
 function Skills() {
   return (
-    <div className="bg-yellow-400">
-      <div className="border-t-2 border-t-black desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto">
-        <h2 className="text-4.5xl font-semibold mt-5 mb-8">Skills</h2>
-        <div className="grid gap-10 desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 items-start">
+    <div className=" desktop:px-8 flex items-center justify-center">
+      <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto flex flex-col items-center">
+        <h2 className="text-4.5xl font-semibold">Skills</h2>
+        <div className="w-[90%] p-8 grid gap-16 desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 items-start">
           <motion.div
             className="flex flex-col gap-10 items-center shadow-xl py-10 rounded-2xl bg-white"
             whileHover={{ y: -15 }}
@@ -29,7 +28,7 @@ function Skills() {
             }}
           >
             <h3 className="text-2xl font-semibold">Frontend</h3>
-            <ul className="flex flex-col gap-7 text-lg font-medium">
+            <ul className="flex flex-col desktop:gap-7 desktop:text-lg font-medium">
               <li className="flex flex-col items-center">
                 <img className="w-24" src={html} alt="html 이미지" />
                 <span>HTML5</span>
@@ -91,7 +90,7 @@ function Skills() {
             }}
           >
             <h3 className="text-2xl font-semibold">version control</h3>
-            <ul className="flex flex-col gap-6 text-lg font-medium">
+            <ul className="flex flex-col desktop:gap-6 desktop:text-lg font-medium">
               <li className="flex flex-col items-center">
                 <img className="w-24" src={git} alt="git 이미지" />
                 <span>Git</span>

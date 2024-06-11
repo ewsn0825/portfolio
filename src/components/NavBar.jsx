@@ -24,13 +24,13 @@ function NavBar() {
           <h1 className="mobile:hidden desktop:block">
             <img
               src={logo2}
-              alt="로고 이미지"
+              alt="이재호 포트폴리오"
               className="w-12 cursor-pointer"
             />
           </h1>
         </Link>
 
-        <ul className="flex gap-6 font-semibold desktop:flex-[0] mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">
+        <ul className="flex desktop:gap-7 font-semibold desktop:flex-[0] desktop:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">
           <li className="cursor-pointer">
             <Link to="about" smooth={true} duration={500}>
               About
