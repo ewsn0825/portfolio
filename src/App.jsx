@@ -30,7 +30,7 @@ function App() {
         <Element name="experience">
           <Experience />
         </Element>
-        <Element name="skills" className="bg-[#b39bf6]">
+        <Element name="skills" className="bg-[#d5cbbf]">
           <Skills />
         </Element>
         <Element name="projects">

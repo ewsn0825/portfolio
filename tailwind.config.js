@@ -3,7 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.js", "./src/**/*.jsx", "./src/*.jsx"],
   theme: {
     extend: {
-      
       screens: {
         mobile: "320px",
         tablet: "768px",
@@ -20,10 +19,12 @@ export default {
         pre: ["Pretendard", "sans-serif"],
         baloo: ['"Baloo Bhai 2"', "sans-serif"],
         noto: ["Noto Sans KR", "sans-serif"],
+        han:["Black Han Sans","sans-serif"]
       },
 
       colors: {
         rgba: "rgba(0, 0, 0, 0.5)",
+        brandtext: "#000b1f",
       },
       fontSize: {
         "1.5xl": ["1.3rem", "1.75rem"],
