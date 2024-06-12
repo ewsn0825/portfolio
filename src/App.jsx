@@ -10,27 +10,27 @@ import DownArrow from "./components/DownArrow";
 
 function App() {
   return (
-    <div className="font-noto">
+    <div className="font-pre">
       <Element name="header"></Element>
       <NavBar />
       <div>
-        <div className="flex flex-col gap-32 py-20">
-          <p className="text-center text-xl font-semibold text-gray-600">
-            안녕하세요. <br />웹 접근성에 관심이 있는 프론트엔드 개발자
+        <div className="flex flex-col gap-32 py-20 ">
+          <p className="text-center desktop:text-xl tablet:text-base mobile:text-xs font-semibold text-gray-600">
+            안녕하세요. <br />웹 접근성에 관심이 많은 프론트엔드 개발자
             이재호입니다.
           </p>
           <DownArrow />
         </div>
       </div>
 
-      <div className="mx-auto flex flex-col">
+      <div className="">
         <Element name="about">
           <About />
         </Element>
         <Element name="experience">
           <Experience />
         </Element>
-        <Element name="skills" className="bg-yellow-400">
+        <Element name="skills" className="bg-[#b39bf6]">
           <Skills />
         </Element>
         <Element name="projects">

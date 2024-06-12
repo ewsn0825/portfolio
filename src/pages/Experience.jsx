@@ -1,8 +1,8 @@
 function Experience() {
   return (
-    <div className="flex items-center justify-center pt-20">
+    <div className="flex items-center justify-center desktop:pt-20 mobile:py-9 desktop:px-8 tablet:px-5 mobile:px-3">
       <div className="flex desktop:gap-14 mobile:gap-5 items-center desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto">
-        <h2 className="border-t-2 border-t-black desktop:text-5xl tablet:text-3xl mobile:text-base font-semibold desktop:mb-8 desktop:pt-5 tablet:mb-9 mobile:mb-8 mobile:pt-1">
+        <h2 className="border-t-2 border-t-black desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:mb-8 desktop:pt-5 tablet:mb-9 mobile:mb-8 mobile:pt-1">
           Experience
         </h2>
         <ul>
