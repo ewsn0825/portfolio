@@ -5,7 +5,7 @@ import facebook from "@/assets/icon/facebook.png"
 function Contact() {
   return (
     <div className="w-full">
-      <div className="bg-[#121212] desktop:py-20 tablet:py-16 mobile:py-10 flex flex-col items-center gap-24">
+      <div className="bg-brandtext desktop:py-20 tablet:py-16 mobile:py-10 flex flex-col items-center gap-24">
         <ul className="flex items-center justify-center gap-10">
           <li className="bg-white p-1 rounded-xl">
             <a href="https://github.com/ewsn0825">
