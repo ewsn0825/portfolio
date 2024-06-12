@@ -2,11 +2,11 @@ import geppetto from "@/assets/project/geppetto.png";
 
 function ProjectGeppetto() {
   return (
-    <div className="bg-white desktop:w-[1000px] tablet:w-[700px] rounded-2xl shadow-2xl py-10 px-10 flex flex-col gap-16">
+    <div className="bg-white desktop:w-[1000px] tablet:w-[630px] mobile:w-[250px] rounded-2xl shadow-2xl desktop:py-10 desktop:px-10 tablet:px-8 tablet:py-8 mobile:px-5 mobile:py-5 flex flex-col desktop:gap-16 mobile:gap-10">
       <div className="flex flex-col items-center gap-10">
-        <h3 className="text-center text-4xl font-base font-han">제페토</h3>
-        <img src={geppetto} alt="제페토 이미지" className="desktop:w-[600px]" />
-        <p className="desktop:w-[600px] desktop:text-lg">
+        <h3 className="text-center desktop:text-4xl tablet:text-2xl mobile:text-lg font-base font-han">제페토</h3>
+        <img src={geppetto} alt="제페토 이미지" className="desktop:w-[600px] tablet:w-[350px] mobile:w-[220px]" />
+        <p className="desktop:w-[600px] tablet:w-[350px] mobile:w-[220px] desktop:text-lg tablet:text-sm mobile:text-[10px]">
           멋쟁이 사자처럼 프론트엔드 스쿨 과정 중 리액트 프로젝트를 진행하기
           위해 만든 펫 커뮤니티 웹사이트 제페토 입니다. 프로젝트를 진행하며
           기획부터 디자인, 구현까지 모든 과정을 진행하였습니다. Zustand
@@ -18,21 +18,21 @@ function ProjectGeppetto() {
         </p>
       </div>
 
-      <ul className="flex flex-col  items-start gap-3 desktop:text-lg">
+      <ul className="flex flex-col items-start gap-3 desktop:text-lg tablet:text-sm mobile:text-[10px]">
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             인원 :{" "}
           </span>
           <span>4인 팀 프로젝트 (FE 4명)</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             기간 :{" "}
           </span>
           <span>2023.09</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             주요기능 :{" "}
           </span>
           <span>
@@ -41,7 +41,7 @@ function ProjectGeppetto() {
           </span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             GitHub :{" "}
           </span>
           <a
@@ -52,7 +52,7 @@ function ProjectGeppetto() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             URL :{" "}
           </span>
           <a href="https://geppetto88.netlify.app" className="text-blue-400">
@@ -60,13 +60,13 @@ function ProjectGeppetto() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             사용기술 :{" "}
           </span>
           <span>Pocketbase, Swiper, Zustand, Tailwindcss</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
             Deployment :{" "}
           </span>
           <span>Netlify</span>
