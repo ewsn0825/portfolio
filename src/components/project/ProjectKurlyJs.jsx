@@ -24,19 +24,19 @@ function ProjectKurlyJs() {
 
       <ul className="flex flex-col items-start gap-3 desktop:text-lg tablet:text-sm mobile:text-[10px]">
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             인원 :{" "}
           </span>
           <span>4인 팀 프로젝트</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             기간 :{" "}
           </span>
           <span>2023.07</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             주요기능 :{" "}
           </span>
           <span>
@@ -45,7 +45,7 @@ function ProjectKurlyJs() {
           </span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             GitHub :{" "}
           </span>
           <a
@@ -57,7 +57,7 @@ function ProjectKurlyJs() {
         </li>
 
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             사용기술 :{" "}
           </span>
           <span>html, css, js</span>

@@ -20,19 +20,19 @@ function ProjectGeppetto() {
 
       <ul className="flex flex-col items-start gap-3 desktop:text-lg tablet:text-sm mobile:text-[10px]">
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             인원 :{" "}
           </span>
           <span>4인 팀 프로젝트 (FE 4명)</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             기간 :{" "}
           </span>
           <span>2023.09</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             주요기능 :{" "}
           </span>
           <span>
@@ -41,7 +41,7 @@ function ProjectGeppetto() {
           </span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             GitHub :{" "}
           </span>
           <a
@@ -52,7 +52,7 @@ function ProjectGeppetto() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             URL :{" "}
           </span>
           <a href="https://geppetto88.netlify.app" className="text-blue-400">
@@ -60,13 +60,13 @@ function ProjectGeppetto() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             사용기술 :{" "}
           </span>
           <span>Pocketbase, Swiper, Zustand, Tailwindcss</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             Deployment :{" "}
           </span>
           <span>Netlify</span>

@@ -19,25 +19,25 @@ function Portfolio() {
 
       <ul className="flex flex-col items-start gap-3 desktop:text-lg tablet:text-sm mobile:text-[10px]">
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             인원 :{" "}
           </span>
           <span>1인 개인 프로젝트</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             기간 :{" "}
           </span>
           <span>2024.06 ~ 2024.06</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             주요기능 :{" "}
           </span>
           <span>인적 사항, 기술 스택, 프로젝트 경험</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             GitHub :{" "}
           </span>
           <a
@@ -48,7 +48,7 @@ function Portfolio() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             URL :{" "}
           </span>
           <a href="https://jadeportfolio.vercel.app" className="text-blue-400">
@@ -56,13 +56,13 @@ function Portfolio() {
           </a>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             사용기술 :{" "}
           </span>
           <span>react-scroll, Tailwindcss</span>
         </li>
         <li>
-          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:w-[50px]">
+          <span className="font-extrabold inline-block desktop:w-[120px] tablet:w-[100px] mobile:mr-2">
             Deployment :{" "}
           </span>
           <span>Vercel</span>
