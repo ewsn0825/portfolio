@@ -20,7 +20,7 @@ function NavBar() {
   return (
     <div
       className={`${
-        isSticky ? "sticky top-0 z-50 shadow" : ""
+        isSticky ? "sticky top-0 z-50 shadow bg-opacity-80 backdrop-blur transition-blur" : ""
       } bg-white w-full`}
     >
       <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] m-auto">

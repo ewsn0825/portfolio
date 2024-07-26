@@ -10,7 +10,7 @@ function About() {
     <div className="desktop:pt-20 mobile:pt-9">
       <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto border-t-2 border-t-black">
         <div className="desktop:px-8 tablet:px-5 mobile:px-3">
-          <h2 className="desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:my-8 tablet:my-6 mobile:my-4">
+          <h2 className="desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:my-8 tablet:my-6 mobile:my-4 ">
             About
           </h2>
           <div className="flex items-center gap-24">

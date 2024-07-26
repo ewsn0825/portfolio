@@ -19,7 +19,12 @@ export default {
         pre: ["Pretendard", "sans-serif"],
         baloo: ['"Baloo Bhai 2"', "sans-serif"],
         noto: ["Noto Sans KR", "sans-serif"],
-        han:["Black Han Sans","sans-serif"]
+        han:["Black Han Sans","sans-serif"],
+        neoLight:["NanumSquareNeoLight","sans-serif"],
+        neo:["NanumSquareNeo","sans-serif"],
+        neoBold:["NanumSquareNeoBold","sans-serif"],
+        neoExBold:["NanumSquareNeoExtraBold","sans-serif"],
+        neoHeavy:["NanumSquareNeoHeavy","sans-serif"],
       },
 
       colors: {
