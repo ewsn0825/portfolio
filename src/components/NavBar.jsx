@@ -30,7 +30,7 @@ function NavBar() {
               <img
                 src={logo2}
                 alt="이재호 포트폴리오"
-                className="w-12 cursor-pointer"
+                className="w-12 cursor-pointer bg-transparent"
               />
             </h1>
           </Link>
