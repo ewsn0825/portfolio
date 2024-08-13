@@ -56,9 +56,9 @@ function Landing() {
         <Element name="experience">
           <Experience />
         </Element>
-        {/* <Element name="skills" className="bg-[#d5cbbf]">
+        <Element name="skills" className="bg-[#d5cbbf]">
           <Skills />
-        </Element> */}
+        </Element>
         <Element name="projects">
           <Projects />
         </Element>

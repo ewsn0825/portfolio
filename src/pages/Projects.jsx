@@ -9,6 +9,7 @@ import kurlyJs from "@/assets/project/kurlyJs.png";
 import geppetto from "@/assets/project/geppetto.png";
 import tving from "@/assets/project/tving.png";
 import portfolio from "@/assets/project/portfolio.png";
+import devmate from "@/assets/project/devmate.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -57,7 +58,7 @@ function Projects() {
                       css
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
-                      scss
+                      sass
                     </li>
                   </ul>
                 </div>
@@ -98,7 +99,7 @@ function Projects() {
                       css
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
-                      scss
+                      sass
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
                       js
@@ -219,6 +220,51 @@ function Projects() {
                   <ul className="flex flex-wrap gap-2 text-gray-500">
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
                       tailwind
+                    </li>
+                    <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
+                      react
+                    </li>
+                    <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
+                      vercel
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+            </Link>
+            <Link to="/projectDetail/portfolio">
+              <motion.div
+                className="flex flex-col desktop:gap-8 cursor-pointer"
+                whileHover="hover"
+              >
+                <div className="relative w-full h-[240px]">
+                  <motion.img
+                    src={devmate}
+                    alt="데브메이트"
+                    className="w-auto h-full rounded-2xl object-cover"
+                    variants={{
+                      hover: { translateY: -5 },
+                    }}
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h3 className="font-neoBold text-[22px] font-semibold">
+                    devMate
+                  </h3>
+                  <p className="font-neo desktop:text-sm text-gray-500">
+                    개발자 커뮤니티 웹 사이트 devMate 입니다. 반응형 웹 디자인을
+                    하였고, 성능 최적화를 진행했습니다.
+                  </p>
+                </div>
+                <div>
+                  <ul className="flex flex-wrap gap-2 text-gray-500">
+                    <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
+                      RWD
+                    </li>
+                    <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
+                      tailwind
+                    </li>
+                    <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
+                      zustand
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl desktop:text-sm">
                       react
