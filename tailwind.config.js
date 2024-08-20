@@ -11,7 +11,7 @@ export default {
         // laptop: "1024px",
         // // => @media (min-width: 1024px) { ... }
 
-        desktop: "1240px",
+        desktop: "1024px",
 
         // => @media (min-width: 1280px) { ... }
       },

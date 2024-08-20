@@ -45,11 +45,12 @@ function Landing() {
             {/* {displayedText} */}
             {renderTextWithLineBreaks(displayedText)}
           </p>
-          <DownArrow />
+          {/* <DownArrow /> */}
+          {index === fullText.length && <DownArrow />}
         </div>
       </div>
 
-      <div className="">
+      <div className="flex flex-col gap-10">
         <Element name="about">
           <About />
         </Element>

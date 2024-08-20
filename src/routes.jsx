@@ -6,6 +6,7 @@ import ProjectGeppetto from "@/pages/project/ProjectGeppetto.jsx";
 import ProjectTving from "@/pages/project/ProjectTving.jsx";
 import Portfolio from "@/pages/project/Portfolio.jsx";
 import Landing from "@/pages/Landing.jsx";
+import DevMate from "./pages/project/DevMate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/projectDetail/portfolio",
         element: <Portfolio />,
+      },
+      {
+        path: "/projectDetail/devMate",
+        element: <DevMate />,
       },
     ],
   },

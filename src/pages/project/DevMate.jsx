@@ -1,8 +1,8 @@
-import pofol from "@/assets/project/portfolio.png";
+import devmate from "@/assets/project/devmate.png";
 import ProjectNav from "@/components/ProjectNav";
 import { Element } from "react-scroll";
 
-function Portfolio() {
+function DevMate() {
   return (
     <div>
       <ProjectNav />
@@ -45,7 +45,7 @@ function Portfolio() {
             </div>
             <div className="flex-[0.5] flex justify-center items-center">
               <img
-                src={pofol}
+                src={devmate}
                 alt="데브메이트 이미지"
                 className="rounded-2xl h-[350px] mobile:w-full top-1/2 left-1/2 shadow"
               />
@@ -200,34 +200,31 @@ function Portfolio() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gray-50">
+              <div className="bg-gray-50 rounded-xl">
                 <div className="bg-[#333] text-white text-center text-lg font-neoBold py-3 rounded-xl">
-                  성능이 너무 낮아!!!
+                  반복되는 페이지가 많은데???
                 </div>
                 <div className="px-5 py-5 flex flex-col gap-12">
                   <div>
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      무거운 웹 사이트가 아닌데도 불구하고 lighthouse로 성능
-                      검사를 해봤을 때{" "}
-                      <span className="text-red-400">성능 점수가 낮게</span>{" "}
-                      나오는 것을 확인했습니다. 원인을 찾아보니 사용중인
-                      페이지가 아닌 페이지들의 js 파일까지 불러오는 것을
-                      확인하였습니다.
+                      초기에{" "}
+                      <span className="text-red-400">
+                        디자인이 비슷한 페이지들을 반복적으로 만들었는데
+                      </span>{" "}
+                      너무 비효율적이라고 판단 하였습니다.
                     </p>
                   </div>
                   <div>
                     <span className="text-blue-400">💡 해결방법</span>
                     <br />
                     <p className="mt-2">
-                      리액트는 Webpack과 같은 번들링 도구를 사용하여 번들된
-                      파일을 갖게되는데 웹의 크기가 커짐에 따라 번들도 커지기
-                      때문에 번들된 파일을 불러오는데 로드시간이 오래 걸리는
-                      문제가 발생합니다. 따라서
-                      <span className="text-blue-400"> 코드 스플리팅</span>을
-                      하여 큰 번들을 작은 번들로 나누어 런타임시 동적으로 로드할
-                      수 있는 여러 번들을 만들도록 하였습니다.{" "}
+                      재사용성을 높이기 위해서{" "}
+                      <span className="text-blue-400">리팩토링</span>을 하여
+                      비슷한 디자인을 가진 페이지들은 하나의 페이지 컴포넌트를
+                      사용하며 원하는 path 경로일 때 알맞는 props를 넘겨서
+                      불필요한 페이지를 반복적으로 만드는 일을 방지하였습니다.
                     </p>
                   </div>
                   <div>
@@ -235,10 +232,9 @@ function Portfolio() {
                     <span className="text-orange-400">🔍 알게된 점</span>
                     <br />
                     <p className="mt-2">
-                      코드 스플리팅을 진행하여 웹의 성능을 높일 수 있다는 점을
-                      알게 되었습니다. 또한 vercel로 배포 전 vite의 build
-                      명령어를 사용해 gzip 형식으로 압축한 뒤 배포를 하면 성능이
-                      훨씬 좋아진다는 것을 알게 되었습니다.
+                      리팩토링 과정을 진행한 뒤, 컴포넌트를 알맞게 변환하여
+                      재사용성을 높였습니다. 이렇게 하니 유지보수 측면에서
+                      효율성이 매우 높아지는 것을 알 수 있었습니다.
                     </p>
                   </div>
                 </div>
@@ -251,4 +247,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default DevMate;
