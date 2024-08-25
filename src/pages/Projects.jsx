@@ -295,10 +295,10 @@ import { Link } from "react-router-dom";
 
 function Projects() {
   return (
-    <div className="desktop:px-8 flex justify-center items-center desktop:py-24 tablet:py-16 mobile:py-9 mobile:px-5">
+    <div className="desktop:px-8 flex justify-center items-center desktop:py-24 tablet:py-16 mobile:py-12 mobile:px-5">
       <div className="desktop:w-[1240px]">
         <div>
-          <h2 className="font-neoExBold desktop:text-5xl tablet:text-4xl mobile:text-xl font-medium mb-10">
+          <h2 className="font-gm desktop:text-5xl tablet:text-4xl mobile:text-3xl font-semibold desktop:mb-20 mobile:mb-10">
             Projects
           </h2>
           <div className="grid desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-5 gap-y-20 items-start">
@@ -508,13 +508,13 @@ function Projects() {
                       tailwind
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      js
+                      RWD
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
                       react
                     </li>
                     <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      framer-motion
+                      react-scroll
                     </li>
                   </ul>
                 </div>

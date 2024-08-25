@@ -57,7 +57,7 @@ function Landing() {
         <Element name="experience">
           <Experience />
         </Element>
-        <Element name="skills" className="bg-[#d5cbbf]">
+        <Element name="skills" className="bg-gray-100">
           <Skills />
         </Element>
         <Element name="projects">

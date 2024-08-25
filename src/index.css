@@ -79,6 +79,14 @@
       format("truetype");
 }
 
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @keyframes bounce {
   0%,
   100% {
@@ -133,8 +141,6 @@
     border-color: black;
   }
 }
-
-
 
 .backdrop-blur {
   backdrop-filter: blur(10px); /* 배경 블러 효과 */
