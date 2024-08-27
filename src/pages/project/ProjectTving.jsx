@@ -151,18 +151,19 @@ function ProjectTving() {
             <div className="grid tablet:grid-cols-2 gap-10 pt-4 ">
               <div className="bg-gray-50">
                 <div className="bg-[#333] text-white text-center text-lg font-neoBold py-3 rounded-xl">
-                  무한 스크롤 데이터 업데이트 안됨
+                  무한 스크롤을 하는데 리뷰 업데이트가 안된다?
                 </div>
                 <div className="px-5 py-5 flex flex-col gap-12">
                   <div>
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      특정 위치에 스크롤이 닿으면 다음 페이지의 데이터를
-                      업데이트 해줘야 하는데 데이터가 업데이트 되지 않음
+                      특정 위치에 스크롤이 닿으면 다음 페이지의 리뷰 데이터를
+                      업데이트를 해주어야 하는데
                       <span className="text-red-400">
-                        성능 점수가 낮게
+                        업데이트가 안되는 문제가
                       </span>{" "}
+                      생겼습니다.
                     </p>
                   </div>
                   <div>
@@ -193,7 +194,7 @@ function ProjectTving() {
               </div>
               <div className="bg-gray-50">
                 <div className="bg-[#333] text-white text-center text-lg font-neoBold py-3 rounded-xl">
-                  성능이 너무 낮아!!!
+                  물 흐르듯한 슬라이드가 안된다??
                 </div>
                 <div className="px-5 py-5 flex flex-col gap-12">
                   <div>
