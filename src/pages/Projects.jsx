@@ -411,7 +411,8 @@ function Projects() {
                   </h3>
                   <p className="font-neo text-sm text-gray-500 flex-grow">
                     멋쟁이 사자처럼 프론트엔드 스쿨 과정 중 react 파트를 배운 후
-                    만든 웹 페이지 입니다.
+                    만든 웹 페이지 입니다. react 개념을 이해하기 위한 목적으로
+                    만들었습니다.
                   </p>
                 </div>
                 <div>

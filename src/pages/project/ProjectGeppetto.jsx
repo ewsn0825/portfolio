@@ -14,7 +14,7 @@ function ProjectGeppetto() {
                 멋쟁이 사자처럼 세번째 프로젝트
               </p>
               <h2 className="font-neoExBold text-6xl mobile:text-5xl">
-                geppetto
+                제페토
               </h2>
               <span>2023.09.02 - 2023.09.24</span>
               <p className="text-gray-500">
@@ -99,52 +99,37 @@ function ProjectGeppetto() {
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   회원가입 <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 정해진 형식에 맞지 않은 아이디 또는 중복된 아이디는 유효성
-                    검사를 하여 사용하지 못함
+                    - 유효성 검사와 중복 검사 기능 <br />- 원하는 프로필 이미지
+                    업로드 기능
                   </p>
                 </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   로그인 <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 로그인 시 JWT 토큰 발급, 아이디 또는 비밀번호 불일치 시
-                    toast를 띄워줌
+                    - 아이디 또는 비밀번호 불일치 시 toast를 띄워줌 <br />-
+                    구글, 카카오 간편 로그인 기능
                   </p>
                 </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  프로필 수정
+                  메인 페이지
                   <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 마이페이지에 들어가서 프로필 수정 버튼 누르면 회원가입 시
-                    등록했던 프로정 정보 수정 가능
+                    - 추천 컨텐츠 기능 <br />- 커뮤니티 인기글 기능
                   </p>
                 </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  회원 탈퇴
+                  컨텐츠 페이지
                   <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 마이페이지에 들어가서 회원탈퇴 버튼을 누르면 한번 확인 후
-                    회원 탈퇴됨
+                    - 댓글 등록, 수정, 삭제 기능 - 좋아요 기능 - 카카오 공유
+                    기능
                   </p>
                 </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  게시글 등록, 수정, 삭제 <br />
+                  커뮤니티 페이지 <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 원하는 카테고리 게시판을 가서 글쓰기 버튼을 누르면 게시글
-                    등록 가능, 등록 이후 수정 또는 삭제가 가능
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  댓글 등록, 수정, 삭제 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 게시글 상세 페이지에 접근을 하면 댓글을 등록할 수 있고,
-                    댓글 록 등록 이후 수정 또는 삭제가 가능
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  게시글 좋아요 기능 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 사용자가 본 게시글이 마음에 든다면 하트 버튼을 눌러 좋아요
-                    기능 사용가능
+                    - 최신순 & 인기순 정렬 기능 <br />
+                    - 글쓰기, 수정, 삭제 기능 <br />- 댓글 등록, 수정 삭제 기능
                   </p>
                 </li>
               </ul>
@@ -178,7 +163,7 @@ function ProjectGeppetto() {
                     <p className="mt-2">
                       리액트에서는 상태가 변경될 때마다 랜더링을 하게되는데
                       input 태그에 value 속성으로 상태가 연결되어 있어서 변경이
-                      있을 때마다 랜더링을 하는 구조입니다. 해결방법을 찾아보니
+                      있을 때마다 랜더링을 하는 구조입니다. 해결방법을 찾아보니{" "}
                       <span className="text-blue-400">디바운싱</span>을 하면
                       일정 시간을 기준으로 입력이 끝났을 때 한번만 랜더링이
                       된다는 것을 활용하여 해결하였습니다.
@@ -190,7 +175,7 @@ function ProjectGeppetto() {
                     <br />
                     <p className="mt-2">
                       반복되는 이벤트를 처리하는 기법으로 디바운싱을 알게
-                      되었습니다. 비슷한 기법으로 쓰로틀링(throttling)이 있는데
+                      되었습니다. 비슷한 기법으로 <span className="text-orange-400">쓰로틀링(throttling)</span>이 있는데
                       디바운싱은 이벤트가 계속 발생할 때 맨 마지막 이벤트만
                       발생하도록 하는 것입니다. 따라서 input에 입력하는 행위를
                       할때는 디바운싱이 적합합니다. 쓰로틀링은 이벤트가 발생하는
@@ -210,22 +195,25 @@ function ProjectGeppetto() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      input 태그의 type="file" 속성을 사용해
+                      input 태그의 type="file" 속성을 사용해 원하는 프로필
+                      이미지를 업로드 하는 기능을 구현하는 중 포켓베이스에서
+                      요구하는{" "}
                       <span className="text-red-400">
-                        디자인이 비슷한 페이지들을 반복적으로 만들었는데
+                        form-data 형식과 업로드한 이미지 형식이 알맞지 않은
                       </span>{" "}
-                      너무 비효율적이라고 판단 하였습니다.
+                      문제가 있었습니다.
                     </p>
                   </div>
                   <div>
                     <span className="text-blue-400">💡 해결방법</span>
                     <br />
                     <p className="mt-2">
-                      재사용성을 높이기 위해서{" "}
-                      <span className="text-blue-400">리팩토링</span>을 하여
-                      비슷한 디자인을 가진 페이지들은 하나의 페이지 컴포넌트를
-                      사용하며 원하는 path 경로일 때 알맞는 props를 넘겨서
-                      불필요한 페이지를 반복적으로 만드는 일을 방지하였습니다.
+                      문제를 해결하기 위해 방법을 찾아보았고{" "}
+                      <span className="text-blue-400">
+                        URL.createObjectURL(file)
+                      </span>{" "}
+                      메서드를 사용하여 이미지를 알맞은 형식으로 바꾸어
+                      해결하였습니다.
                     </p>
                   </div>
                   <div>
@@ -233,9 +221,8 @@ function ProjectGeppetto() {
                     <span className="text-orange-400">🔍 알게된 점</span>
                     <br />
                     <p className="mt-2">
-                      리팩토링 과정을 진행한 뒤, 컴포넌트를 알맞게 변환하여
-                      재사용성을 높였습니다. 이렇게 하니 유지보수 측면에서
-                      효율성이 매우 높아지는 것을 알 수 있었습니다.
+                      URL.createObjectURL(file) 메서드를 사용하여 이미지를 blob
+                      형식으로 바꿀 수 있다는 것을 처음 알게 되었습니다.
                     </p>
                   </div>
                 </div>
@@ -249,22 +236,22 @@ function ProjectGeppetto() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      input 태그의 type="file" 속성을 사용해
                       <span className="text-red-400">
-                        디자인이 비슷한 페이지들을 반복적으로 만들었는데
+                        아이디와 비밀번호로만 로그인하는 것에 한계를 느끼게
+                        되었고
                       </span>{" "}
-                      너무 비효율적이라고 판단 하였습니다.
+                      OAuth 2.0을 활용하여 간편로그인 구현해보고 싶었습니다.
                     </p>
                   </div>
                   <div>
                     <span className="text-blue-400">💡 해결방법</span>
                     <br />
                     <p className="mt-2">
-                      재사용성을 높이기 위해서{" "}
-                      <span className="text-blue-400">리팩토링</span>을 하여
-                      비슷한 디자인을 가진 페이지들은 하나의 페이지 컴포넌트를
-                      사용하며 원하는 path 경로일 때 알맞는 props를 넘겨서
-                      불필요한 페이지를 반복적으로 만드는 일을 방지하였습니다.
+                      마침 포켓베이스에서 OAuth 2.0를 사용할 수 있는 메서드가
+                      있어서
+                      <span className="text-blue-400">{`authWithOAuth2({ provider: 'provider' })`}</span>{" "}
+                      메서드를 사용해서 구글, 카카오 간편 로그인을
+                      구현하였습니다.
                     </p>
                   </div>
                   <div>
@@ -272,9 +259,9 @@ function ProjectGeppetto() {
                     <span className="text-orange-400">🔍 알게된 점</span>
                     <br />
                     <p className="mt-2">
-                      리팩토링 과정을 진행한 뒤, 컴포넌트를 알맞게 변환하여
-                      재사용성을 높였습니다. 이렇게 하니 유지보수 측면에서
-                      효율성이 매우 높아지는 것을 알 수 있었습니다.
+                      간편 로그인을 구현해보니 꼭 회원가입을 안하더라도 기존에
+                      가입되어있던 다른 사이트 계정을 이용할 수 있어서 사용자
+                      편의성이 좋아진 것을 느꼈습니다.
                     </p>
                   </div>
                 </div>
