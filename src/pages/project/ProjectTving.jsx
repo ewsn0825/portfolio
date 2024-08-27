@@ -159,7 +159,7 @@ function ProjectTving() {
                     <br />
                     <p className="mt-2">
                       특정 위치에 스크롤이 닿으면 다음 페이지의 리뷰 데이터를
-                      업데이트를 해주어야 하는데
+                      업데이트를 해주어야 하는데{" "}
                       <span className="text-red-400">
                         업데이트가 안되는 문제가
                       </span>{" "}
@@ -170,13 +170,13 @@ function ProjectTving() {
                     <span className="text-blue-400">💡 해결방법</span>
                     <br />
                     <p className="mt-2">
-                      리액트는 Webpack과 같은 번들링 도구를 사용하여 번들된
-                      파일을 갖게되는데 웹의 크기가 커짐에 따라 번들도 커지기
-                      때문에 번들된 파일을 불러오는데 로드시간이 오래 걸리는
-                      문제가 발생합니다. 따라서
-                      <span className="text-blue-400"> 코드 스플리팅</span>을
-                      하여 큰 번들을 작은 번들로 나누어 런타임시 동적으로 로드할
-                      수 있는 여러 번들을 만들도록 하였습니다.{" "}
+                      해결 방법을 찾아보니 리액트 쿼리의 데이터 쿼리를 업데이트
+                      하기 위해서는{" "}
+                      <span className="text-blue-400">
+                        queryClient.invalidateQueries()
+                      </span>{" "}
+                      메서드를 사용해 데이터 쿼리를 무효화하고 변경된 데이터를
+                      refetch 하는 방식으로 업데이트를 할 수 있었습니다.
                     </p>
                   </div>
                   <div>
@@ -184,10 +184,12 @@ function ProjectTving() {
                     <span className="text-orange-400">🔍 알게된 점</span>
                     <br />
                     <p className="mt-2">
-                      코드 스플리팅을 진행하여 웹의 성능을 높일 수 있다는 점을
-                      알게 되었습니다. 또한 vercel로 배포 전 vite의 build
-                      명령어를 사용해 gzip 형식으로 압축한 뒤 배포를 하면 성능이
-                      훨씬 좋아진다는 것을 알게 되었습니다.
+                      해당 방식으로 쿼리 데이터를 업데이트 하면 페이지를
+                      refresh할 필요없이 데이터 쿼리가 업데이트 된다는 것을 알게
+                      되었습니다. 또한 invalidateQueries 메서드 외에도 비슷한
+                      기능을 하는 refetchQueries 메소드도 알게 되었는데,
+                      마찬가지로 데이터 쿼리를 refetch 하여 업데이트를 하는
+                      메서드입니다.
                     </p>
                   </div>
                 </div>
@@ -201,25 +203,26 @@ function ProjectTving() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      무거운 웹 사이트가 아닌데도 불구하고 lighthouse로 성능
-                      검사를 해봤을 때{" "}
-                      <span className="text-red-400">성능 점수가 낮게</span>{" "}
-                      나오는 것을 확인했습니다. 원인을 찾아보니 사용중인
-                      페이지가 아닌 페이지들의 js 파일까지 불러오는 것을
-                      확인하였습니다.
+                      Swiper 라이브러리를 사용하여 딜레이 없이 반복적으로
+                      흘러가는 슬라이드를 만들기 위해서 autoplay 속성에 delay를
+                      0으로 두었습니다.{" "}
+                      <span className="text-red-400">
+                        하지만 예상과 다르게 특정 주기마다 슬라이드가 멈췄다가
+                        다시 움직이는 현상
+                      </span>
+                      을 발견했습니다.{" "}
                     </p>
                   </div>
                   <div>
                     <span className="text-blue-400">💡 해결방법</span>
                     <br />
                     <p className="mt-2">
-                      리액트는 Webpack과 같은 번들링 도구를 사용하여 번들된
-                      파일을 갖게되는데 웹의 크기가 커짐에 따라 번들도 커지기
-                      때문에 번들된 파일을 불러오는데 로드시간이 오래 걸리는
-                      문제가 발생합니다. 따라서
-                      <span className="text-blue-400"> 코드 스플리팅</span>을
-                      하여 큰 번들을 작은 번들로 나누어 런타임시 동적으로 로드할
-                      수 있는 여러 번들을 만들도록 하였습니다.{" "}
+                      해결방법을 찾던 도중 swiper에서 기본적으로 제공된 css
+                      파일에서 해결방안을 찾을 수 있었습니다. swiper의 css에는
+                      기본적으로 제공된 클래스들이 있는데
+                      <span className="text-blue-400">.smooth-swiper</span>
+                      클래스가 제가 원하는 기능을 쓸 수있는 클래스였고, 해당
+                      클래스에 알맞은 속성을 넣어 해결하였습니다.
                     </p>
                   </div>
                   <div>
@@ -227,10 +230,13 @@ function ProjectTving() {
                     <span className="text-orange-400">🔍 알게된 점</span>
                     <br />
                     <p className="mt-2">
-                      코드 스플리팅을 진행하여 웹의 성능을 높일 수 있다는 점을
-                      알게 되었습니다. 또한 vercel로 배포 전 vite의 build
-                      명령어를 사용해 gzip 형식으로 압축한 뒤 배포를 하면 성능이
-                      훨씬 좋아진다는 것을 알게 되었습니다.
+                      swiper 라이브러리를 사용하면 swiper에서 제공된 css 파일을
+                      import 할 수 있는데 이렇게 해서 가져온 css에는 다양한
+                      클래스들이 존재합니다. 제가 원하던 기능 외에도 슬라이드
+                      쇼를 커스텀 하거나 이전, 다음 버튼도 원하는 식으로 css를
+                      사용해 커스텀이 가능하다는 것을 알게되었습니다. 이후 메인
+                      페이지의 슬라이드 버튼을 커스텀 할 때 큰 도움이
+                      되었습니다.
                     </p>
                   </div>
                 </div>
