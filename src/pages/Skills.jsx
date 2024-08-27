@@ -14,9 +14,9 @@ import { motion } from "framer-motion";
 
 function Skills() {
   return (
-    <div className="desktop:px-8 desktop:py-24 tablet:py-16 mobile:py-9 flex items-center justify-center">
+    <div className="desktop:px-8 desktop:py-24 tablet:py-16 mobile:py-9 flex items-center justify-center ">
       <div className="desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto flex flex-col items-center">
-        <h2 className="text-brandtext desktop:text-5xl tablet:text-3xl mobile:text-xl font-medium font-han">Skills</h2>
+        <h2 className="desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold font-gm">Skills</h2>
         <div className="w-[90%] p-8 grid gap-16 desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 items-start">
           <motion.div
             className="flex flex-col gap-10 items-center shadow-xl py-10 rounded-2xl bg-white"
