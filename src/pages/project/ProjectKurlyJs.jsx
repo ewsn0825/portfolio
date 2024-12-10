@@ -23,14 +23,6 @@ function ProjectKurlyJs() {
                 애니메이션과 슬라이드 처리를 하였습니다.
               </p>
               <div className="flex mobile:flex-col tablet:flex-row gap-5 mt-5">
-                {/* <button
-                  className="text-[#121212] text-sm border-2 border-[#121212] rounded-full px-14 py-4 hover:border-gray-500 hover:text-gray-500"
-                  onClick={() =>
-                    (window.location.href = "https://devmate-fe.vercel.app")
-                  }
-                >
-                  웹 페이지 바로가기
-                </button> */}
                 <button
                   className="text-white bg-[#121212] px-10 py-4 rounded-full hover:opacity-80"
                   onClick={() =>
