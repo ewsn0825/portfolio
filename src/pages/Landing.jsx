@@ -5,7 +5,6 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import { Element } from "react-scroll";
-import DownArrow from "../components/DownArrow";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -42,11 +41,8 @@ function Landing() {
       <div>
         <div className="flex flex-col gap-32 py-20 ">
           <p className="font-neo text-center desktop:text-xl tablet:text-base mobile:text-xs font-semibold text-gray-600 ">
-            {/* {displayedText} */}
             {renderTextWithLineBreaks(displayedText)}
           </p>
-          {/* <DownArrow /> */}
-          {index === fullText.length && <DownArrow />}
         </div>
       </div>
 

@@ -201,8 +201,7 @@ function ProjectTving() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      무거운 웹 사이트가 아닌데도 불구하고 lighthouse로 성능
-                      검사를 해봤을 때{" "}
+                      swiper의 {" "}
                       <span className="text-red-400">성능 점수가 낮게</span>{" "}
                       나오는 것을 확인했습니다. 원인을 찾아보니 사용중인
                       페이지가 아닌 페이지들의 js 파일까지 불러오는 것을
