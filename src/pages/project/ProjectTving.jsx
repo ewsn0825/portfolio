@@ -203,13 +203,6 @@ function ProjectTving() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-<<<<<<< HEAD
-                      swiper의 {" "}
-                      <span className="text-red-400">성능 점수가 낮게</span>{" "}
-                      나오는 것을 확인했습니다. 원인을 찾아보니 사용중인
-                      페이지가 아닌 페이지들의 js 파일까지 불러오는 것을
-                      확인하였습니다.
-=======
                       Swiper 라이브러리를 사용하여 딜레이 없이 반복적으로
                       흘러가는 슬라이드를 만들기 위해서 autoplay 속성에 delay를
                       0으로 두었습니다.{" "}
@@ -218,7 +211,6 @@ function ProjectTving() {
                         다시 움직이는 현상
                       </span>
                       을 발견했습니다.{" "}
->>>>>>> 45cb2bb4700280ed694a4f8b4d227b54f78c1182
                     </p>
                   </div>
                   <div>
