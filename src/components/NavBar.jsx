@@ -34,12 +34,13 @@ function NavBar() {
       <div className="desktop:max-w-[1240px] mobile:min-w-[320px] m-auto">
         <div className="flex justify-between items-center desktop:p-4 mobile:p-2">
           <Link to="header" smooth={true} duration={500}>
-            <h1 className="mobile:hidden desktop:block">
-              <img
+            <h1 className="mobile:hidden desktop:block font-gm font-bold text-2xl">
+              JH_Portfolio
+              {/* <img
                 src={logo2}
                 alt="이재호 포트폴리오"
                 className="w-12 cursor-pointer bg-transparent"
-              />
+              /> */}
             </h1>
           </Link>
           <ul className="flex desktop:gap-7 font-normal desktop:flex-[0] desktop:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">

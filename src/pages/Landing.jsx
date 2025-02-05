@@ -46,14 +46,14 @@ function Landing() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10">
-        <Element name="about">
+      <div className="flex flex-col">
+        <Element name="about" className="bg-[]">
           <About />
         </Element>
-        <Element name="experience">
+        <Element name="experience" className="bg-[#141617]">
           <Experience />
         </Element>
-        <Element name="skills" className="bg-gray-50">
+        <Element name="skills" className="bg-[#25282a]">
           <Skills />
         </Element>
         <Element name="projects">

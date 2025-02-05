@@ -155,7 +155,13 @@ function Portfolio() {
               </div>
             </div>
             <div className="flex-[0.5] flex flex-col">
-              <h3 className="font-neoExBold text-2xl mb-5">🎯 기능 설명</h3>
+              <h3 className="font-neoExBold text-2xl mb-5">
+                🎯 기능 설명
+                <br />
+                <span className="text-base text-gray-500">
+                  (프로젝트에서 내가 담당한 기능)
+                </span>
+              </h3>
               <ul className="tablet:ml-10 flex flex-col gap-8 tablet:font-neoBold tablet:text-lg mobile:text-base">
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   About <br />
