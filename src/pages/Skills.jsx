@@ -1,6 +1,6 @@
 import tailwind from "@/assets/skill/tw_d.svg";
 
-import react from "@/assets/skill/react.svg";
+import react from "@/assets/skill/react_n.svg";
 
 import zustand from "@/assets/skill/zustand_d.svg";
 import ts from "@/assets/skill/ts_d.svg";
