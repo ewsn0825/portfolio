@@ -11,7 +11,7 @@ function ProjectGeppetto() {
           <div className="flex tablet:flex-row mobile:flex-col-reverse pb-14 mt-20 mobile:mt-10 border-b gap-12 border-gray-200">
             <div className="flex-[0.5] flex flex-col gap-6">
               <p className="text-3.5xl text-gray-600 mobile:text-2.5xl">
-                멋쟁이 사자처럼 세번째 프로젝트
+                멋쟁이 사자처럼 프로젝트
               </p>
               <h2 className="font-neoExBold text-6xl mobile:text-5xl">
                 제페토
@@ -19,8 +19,8 @@ function ProjectGeppetto() {
               <span>2023.09.02 - 2023.09.24</span>
               <p className="text-gray-500">
                 펫 커뮤니티 사이트 제페토입니다. 기획부터 디자인 구현까지
-                팀원들과 처음부터 진행하였고, 데스크탑 뷰에서만 구현하였습니다.
-                코딩 컨벤션과 커밋 컨벤션을 정하고 github 프로젝트를 활용해
+                팀원들과 처음부터 진행하였고, 데스크탑 뷰만 구현하였습니다. 코딩
+                컨벤션과 커밋 컨벤션을 정하고 github 프로젝트를 활용해
                 일정관리를 하였습니다.
               </p>
               <div className="flex mobile:flex-col tablet:flex-row gap-5 mt-5">
@@ -85,16 +85,19 @@ function ProjectGeppetto() {
                   프로젝트 설명
                   <br />
                   <p className="mt-3 text-gray-700 font-neo">
-                    처음 react를 사용하여 만든 웹 페이지입니다. 최대한
-                    아토믹하게 컴포넌트 분리를 하려고 노력하였고, 포켓베이스를
-                    사용하여 백엔드 환경을 구현해 프로젝트를 진행하였습니다.
-                    netlify를 사용하여 간단하게 배포까지 진행해보았습니다.
+                    처음 react를 사용하여 만든 웹 페이지입니다. 코드 재사용을
+                    위해 아토믹 컴포넌트 단위로 분리하여 구현하였고,
+                    포켓베이스를 사용하여 백엔드 환경을 구현해 프로젝트를
+                    진행하였습니다. netlify를 사용하여 간단하게 배포까지
+                    하였습니다.
                   </p>
                 </div>
               </div>
             </div>
             <div className="flex-[0.5] flex flex-col">
-              <h3 className="font-neoExBold text-2xl mb-5">🎯 기능 설명</h3>
+              <h3 className="font-neoExBold text-2xl mb-5">
+                🎯 기능 설명<br/><span className="text-base text-gray-500">(프로젝트에서 내가 담당한 기능)</span>
+              </h3>
               <ul className="tablet:ml-10 flex flex-col gap-8 tablet:font-neoBold tablet:text-lg mobile:text-base">
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   회원가입 <br />
@@ -111,25 +114,9 @@ function ProjectGeppetto() {
                   </p>
                 </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  메인 페이지
-                  <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 추천 컨텐츠 기능 <br />- 커뮤니티 인기글 기능
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  컨텐츠 페이지
-                  <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 댓글 등록, 수정, 삭제 기능 - 좋아요 기능 - 카카오 공유
-                    기능
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   커뮤니티 페이지 <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
                     - 최신순 & 인기순 정렬 기능 <br />
-                    - 글쓰기, 수정, 삭제 기능 <br />- 댓글 등록, 수정 삭제 기능
                   </p>
                 </li>
               </ul>
@@ -149,7 +136,7 @@ function ProjectGeppetto() {
                     <span className="text-red-400">🔥 문제발생</span>
                     <br />
                     <p className="mt-2">
-                      회원가입에서 유효성 검사를 진행하기 위해 input 창에
+                      회원가입에서 유효성 검사를 진행하기 위해 입력 창에서
                       텍스트가 바뀔 때 상태에 데이터를 저장해 사용했는데{" "}
                       <span className="text-red-400">
                         텍스트를 입력할 때 마다 랜더링이 발생
@@ -191,7 +178,7 @@ function ProjectGeppetto() {
               </div>
               <div className="bg-gray-50 rounded-xl">
                 <div className="bg-[#333] text-white text-center text-lg font-neoBold py-3 rounded-xl">
-                  원하는 이미지를 포켓베이스에 저장하고 싶어!!
+                  원하는 이미지를 포켓베이스에 저장하고 싶어
                 </div>
                 <div className="px-5 py-5 flex flex-col gap-12">
                   <div>
@@ -225,14 +212,14 @@ function ProjectGeppetto() {
                     <br />
                     <p className="mt-2">
                       URL.createObjectURL(file) 메서드를 사용하여 이미지를 blob
-                      형식으로 바꿀 수 있다는 것을 처음 알게 되었습니다.
+                      형식으로 바꿀 수 있다는 것을 알게 되었습니다.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="bg-gray-50 rounded-xl">
                 <div className="bg-[#333] text-white text-center text-lg font-neoBold py-3 rounded-xl">
-                  간편 로그인을 해볼까??
+                  간편 로그인을 해보자
                 </div>
                 <div className="px-5 py-5 flex flex-col gap-12">
                   <div>

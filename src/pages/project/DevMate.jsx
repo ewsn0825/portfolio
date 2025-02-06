@@ -96,38 +96,14 @@ function DevMate() {
               </div>
             </div>
             <div className="flex-[0.5] flex flex-col">
-              <h3 className="font-neoExBold text-2xl mb-5">🎯 기능 설명</h3>
+              <h3 className="font-neoExBold text-2xl mb-5">
+                🎯 기능 설명
+                <br />
+                <span className="text-base text-gray-500">
+                  (프로젝트에서 내가 담당한 기능)
+                </span>
+              </h3>
               <ul className="tablet:ml-10 flex flex-col gap-8 tablet:font-neoBold tablet:text-lg mobile:text-base">
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  회원가입 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 정해진 형식에 맞지 않은 아이디 또는 중복된 아이디는 유효성
-                    검사를 하여 사용하지 못함
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  로그인 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 로그인 시 JWT 토큰 발급, 아이디 또는 비밀번호 불일치 시
-                    toast를 띄워줌
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  프로필 수정
-                  <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 마이페이지에 들어가서 프로필 수정 버튼 누르면 회원가입 시
-                    등록했던 프로정 정보 수정 가능
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  회원 탈퇴
-                  <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 마이페이지에 들어가서 회원탈퇴 버튼을 누르면 한번 확인 후
-                    회원 탈퇴됨
-                  </p>
-                </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   게시글 등록, 수정, 삭제 <br />
                   <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">

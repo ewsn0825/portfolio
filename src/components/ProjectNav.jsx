@@ -122,12 +122,13 @@ function ProjectNav() {
       <div className="m-auto desktop:px-24 tablet:px-2">
         <div className="flex justify-between items-center desktop:p-3 tablet:p-3 mobile:p-3">
           <RouterLink to="/">
-            <h1 className="desktop:w-12 tablet:w-10 mobile:w-8">
-              <img
+            <h1 className="desktop:w-12 tablet:w-10 mobile:w-8 font-gm font-bold text-xl">
+              JH_Portfolio
+              {/* <img
                 src={logo2}
                 alt="이재호 포트폴리오"
                 className="cursor-pointer bg-transparent"
-              />
+              /> */}
             </h1>
           </RouterLink>
           <ul className="flex font-light desktop:flex-[0.9] desktop:text-base tablet:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-sm mobile:gap-3">

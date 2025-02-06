@@ -7,108 +7,23 @@ import { Link } from "react-router-dom";
 
 function Projects() {
   return (
-    <div className="desktop:px-8 flex justify-center items-center desktop:py-24 tablet:py-16 mobile:py-12 mobile:px-5">
-      <div className="desktop:w-[1240px]">
+    <div className="desktop:px-8 flex justify-center items-center desktop:py-24 tablet:py-16 mobile:py-12 mobile:px-5 bg-[#f6f9fa]">
+      <div className="desktop:w-[1240px] ">
         <div>
           <div className="flex  flex-col gap-5 desktop:mb-20 mobile:mb-10 ">
             <h2 className="font-gm desktop:text-5xl tablet:text-4xl mobile:text-3xl font-semibold">
               Projects
             </h2>
-            <p className="text-gray-400">[프로젝트를 누르시면 상세보기가 가능합니다.]</p>
+            <p className="text-gray-400">
+              [프로젝트를 누르시면 상세보기가 가능합니다.]
+            </p>
           </div>
 
           <div className="grid desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-5 gap-y-20 items-start">
-            {/* HTML 프로젝트 */}
-            {/* <Link to="/projectDetail/projectKurlyHtml">
-              <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
-                whileHover="hover"
-              >
-                <div className="relative w-full h-[240px]">
-                  <motion.img
-                    src={kurlyHtml}
-                    alt="마켓컬리 HTML 프로젝트"
-                    className="w-full h-full rounded-2xl object-cover border"
-                    variants={{
-                      hover: { translateY: -5 },
-                    }}
-                  />
-                </div>
-                <div className="flex flex-col gap-3 flex-grow">
-                  <h3 className="font-neoBold text-[22px] font-semibold">
-                    마켓컬리 HTML
-                  </h3>
-                  <p className="font-neo text-sm text-gray-500 flex-grow">
-                    멋쟁이 사자처럼 프론트엔드 스쿨 과정 중 html, css 파트를
-                    배우고 만든 웹 페이지 입니다. 정적 웹 페이지 구조를 이해하기
-                    위해 만들었습니다.
-                  </p>
-                </div>
-                <div>
-                  <ul className="flex flex-wrap gap-2 text-gray-500">
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      html
-                    </li>
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      css
-                    </li>
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      sass
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-            </Link> */}
-
-            {/* JS 프로젝트 */}
-            {/* <Link to="/projectDetail/projectKurlyJs">
-              <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
-                whileHover="hover"
-              >
-                <div className="relative w-full h-[240px]">
-                  <motion.img
-                    src={kurlyJs}
-                    alt="마켓컬리 JS 프로젝트"
-                    className="w-full h-full rounded-2xl object-cover border"
-                    variants={{
-                      hover: { translateY: -5 },
-                    }}
-                  />
-                </div>
-                <div className="flex flex-col gap-3 flex-grow">
-                  <h3 className="font-neoBold text-[22px] font-semibold">
-                    마켓컬리 JS
-                  </h3>
-                  <p className="font-neo text-sm text-gray-500 flex-grow">
-                    멋쟁이 사자처럼 프론트엔드 스쿨 과정 중 js 파트를 배운 후
-                    만든 웹 페이지 입니다. 이전 클론코딩하여 만들었던 마켓컬리
-                    정적 웹 페이지를 동적 웹페이지로 바꿔보았습니다.
-                  </p>
-                </div>
-                <div>
-                  <ul className="flex flex-wrap gap-2 text-gray-500">
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      html
-                    </li>
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      css
-                    </li>
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      sass
-                    </li>
-                    <li className="px-4 py-1 border border-gray-300 rounded-2xl text-sm">
-                      js
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-            </Link> */}
-
             {/* 제페토 프로젝트 */}
             <Link to="/projectDetail/geppetto">
               <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
+                className="flex flex-col h-full justify-between cursor-pointer gap-6 bg-white p-4 rounded-2xl"
                 whileHover="hover"
               >
                 <div className="relative w-full h-[240px]">
@@ -153,7 +68,7 @@ function Projects() {
             {/* Tving 클론코딩 프로젝트 */}
             <Link to="/projectDetail/cloneTving">
               <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
+                className="flex flex-col h-full justify-between cursor-pointer gap-6 bg-white p-4 rounded-2xl"
                 whileHover="hover"
               >
                 <div className="relative w-full h-[240px]">
@@ -197,7 +112,7 @@ function Projects() {
             {/* 포트폴리오 프로젝트 */}
             <Link to="/projectDetail/portfolio">
               <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
+                className="flex flex-col h-full justify-between cursor-pointer gap-6 bg-white p-4 rounded-2xl"
                 whileHover="hover"
               >
                 <div className="relative w-full h-[240px]">
@@ -241,7 +156,7 @@ function Projects() {
             {/* DevMate 프로젝트 */}
             <Link to="/projectDetail/devmate">
               <motion.div
-                className="flex flex-col h-full justify-between cursor-pointer gap-6"
+                className="flex flex-col h-full justify-between cursor-pointer gap-6 bg-white p-4 rounded-2xl"
                 whileHover="hover"
               >
                 <div className="relative w-full h-[240px]">

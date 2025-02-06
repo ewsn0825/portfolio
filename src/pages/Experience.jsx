@@ -8,11 +8,11 @@ function Experience() {
         className="flex desktop:gap-14 mobile:gap-5 items-center desktop:max-w-[1240px]
        mobile:min-w-[320px] mx-auto"
       >
-        <h2 className="font-gm border-t-2 border-t-black desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:mb-8 desktop:pt-5 tablet:mb-9 mobile:mb-8 mobile:pt-1">
+        <h2 className="font-gm text-white border-t-2 border-t-white desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:mb-8 desktop:pt-5 tablet:mb-9 mobile:mb-8 mobile:pt-1">
           Experience
         </h2>
         <ul>
-          <li className="flex flex-col gap-2">
+          <li className="flex flex-col gap-2 text-[#9da7ad]">
             <span className="desktop:text-3xl tablet:text-2xl mobile:text-xs">
               멋쟁이 사자처럼 프론트엔드 스쿨 수료
             </span>

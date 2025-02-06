@@ -19,8 +19,8 @@ function ProjectTving() {
               <span>2024.05 - 2024.06</span>
               <p className="text-gray-500">
                 OTT 티빙 웹사이트를 클론코딩 한 웹 사이트입니다. <br /> 최대한
-                티빙의 기능들을 구현하려고 노력하였으며, 데스크탑 기준으로
-                마크업을 구현하였습니다.
+                티빙의 기능들을 구현하려고 노력하였으며, 데스크탑 뷰 레이아웃만
+                구현하였습니다.
               </p>
               <div className="flex mobile:flex-col tablet:flex-row gap-5 mt-5">
                 <button
@@ -88,28 +88,21 @@ function ProjectTving() {
                     사용하여 jwt 방식으로 CRUD 처리를 해보는 과정을 통해 데이터
                     통신에 대해 기존에 알고있던 것보다 깊이 이해할 수
                     있었습니다. 또한 무한 스크롤 기능을 만들기 위해
-                    Tanstack-query 라이브러리를 활용해볼 수 있어서 좋았습니다.
+                    Tanstack-query 라이브러리를 활용해보며 Infinite query와 캐싱
+                    처리에 대해서 이해할 수 있었습니다.
                   </p>
                 </div>
               </div>
             </div>
             <div className="flex-[0.5] flex flex-col">
-              <h3 className="font-neoExBold text-2xl mb-5">🎯 기능 설명</h3>
+              <h3 className="font-neoExBold text-2xl mb-5">
+                🎯 기능 설명
+                <br />
+                <span className="text-base text-gray-500">
+                  (프로젝트에서 내가 담당한 기능)
+                </span>
+              </h3>
               <ul className="tablet:ml-10 flex flex-col gap-8 tablet:font-neoBold tablet:text-lg mobile:text-base">
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  회원가입 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 정해진 형식에 맞지 않은 아이디 또는 중복된 아이디는 유효성
-                    검사를 하여 사용하지 못함
-                  </p>
-                </li>
-                <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
-                  로그인 <br />
-                  <p className="text-gray-700 desktop:text-base mt-2 font-neo tablet:text-sm mobile:text-[14px]">
-                    - 로그인 시 JWT 토큰 발급, 아이디 또는 비밀번호 불일치 시
-                    toast를 띄워줌
-                  </p>
-                </li>
                 <li className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-gray-300">
                   프로필 생성, 수정, 삭제
                   <br />
@@ -221,8 +214,8 @@ function ProjectTving() {
                       파일에서 해결방안을 찾을 수 있었습니다. swiper의 css에는
                       기본적으로 제공된 클래스들이 있는데
                       <span className="text-blue-400">.smooth-swiper</span>
-                      클래스가 제가 원하는 기능을 쓸 수있는 클래스였고, 해당
-                      클래스에 알맞은 속성을 넣어 해결하였습니다.
+                      클래스가 해당 기능과 관련이 있는 것을 확인하였고, 알맞은
+                      속성을 넣어 해결하였습니다.
                     </p>
                   </div>
                   <div>
@@ -232,9 +225,9 @@ function ProjectTving() {
                     <p className="mt-2">
                       swiper 라이브러리를 사용하면 swiper에서 제공된 css 파일을
                       import 할 수 있는데 이렇게 해서 가져온 css에는 다양한
-                      클래스들이 존재합니다. 제가 원하던 기능 외에도 슬라이드
-                      쇼를 커스텀 하거나 이전, 다음 버튼도 원하는 식으로 css를
-                      사용해 커스텀이 가능하다는 것을 알게되었습니다. 이후 메인
+                      클래스들이 존재합니다. 제가 원하던 기능 외에도 슬라이드 를
+                      커스텀 하거나 이전, 다음 버튼도 원하는 식으로 css를 사용해
+                      커스텀이 가능하다는 것을 알게되었습니다. 이후 메인
                       페이지의 슬라이드 버튼을 커스텀 할 때 큰 도움이
                       되었습니다.
                     </p>
