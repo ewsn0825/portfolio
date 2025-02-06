@@ -11,11 +11,11 @@ function About() {
       {/* desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] mx-auto border-t-2 border-t-black */}
       <div>
         <div className="mx-auto desktop:max-w-[1240px] mobile:min-w-[320px]">
-          {/* <hr className="border-b-2" /> */}
+   
           <h2 className="font-gm desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold desktop:my-8 tablet:my-6 mobile:my-4 ">
             About
           </h2>
-          <div className="flex items-center gap-24">
+          <div className="flex items-center gap-24 py-3">
             <img
               src={profile}
               alt="프로필 이미지"

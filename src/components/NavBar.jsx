@@ -32,9 +32,9 @@ function NavBar() {
     >
       {/* desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] m-auto */}
       <div className="desktop:max-w-[1240px] mobile:min-w-[320px] m-auto">
-        <div className="flex justify-between items-center desktop:p-4 mobile:p-2">
+        <div className="flex justify-between items-center desktop:p-4 tablet:p-3 mobile:p-2">
           <Link to="header" smooth={true} duration={500}>
-            <h1 className="mobile:hidden desktop:block font-gm font-bold text-2xl">
+            <h1 className="mobile:hidden desktop:block tablet:block font-gm font-bold desktop:text-2xl tablet:text-md cursor-pointer">
               JH_Portfolio
               {/* <img
                 src={logo2}
@@ -43,7 +43,7 @@ function NavBar() {
               /> */}
             </h1>
           </Link>
-          <ul className="flex desktop:gap-7 font-normal desktop:flex-[0] desktop:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">
+          <ul className="flex desktop:gap-7 font-normal desktop:flex-[0] tablet:flex-[0.5] desktop:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">
             {["about", "experience", "skills", "projects", "contact"].map(
               (link) => (
                 <li
