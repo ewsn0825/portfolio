@@ -73,7 +73,6 @@
 // export default ProjectNav;
 
 import { useState, useEffect } from "react";
-import logo2 from "@/assets/logo2.png";
 import { Link as ScrollLink, Events, scrollSpy } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 

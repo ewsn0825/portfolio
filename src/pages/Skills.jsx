@@ -1,101 +1,116 @@
 import tailwind from "@/assets/skill/tw_d.svg";
-
 import react from "@/assets/skill/react_n.svg";
-
 import zustand from "@/assets/skill/zustand_d.svg";
 import ts from "@/assets/skill/ts_d.svg";
+import tanstack from "@/assets/skill/tanstack.svg";
+// lucide-react에서 화살표 아이콘 추가
+import { ChevronRight } from "lucide-react";
 
-import { motion } from "framer-motion";
+// 스킬 데이터를 배열로 분리하여 유지보수를 쉽게 만듭니다.
+const skillsData = [
+  {
+    id: "react",
+    name: "React",
+    icon: react,
+    descriptions: [
+      "컴포넌트를 분할하여 재사용성을 높입니다.",
+      "다양한 라이브러리를 활용할 수 있습니다.",
+      "Vite를 사용하여 빌드할 수 있습니다.",
+      "코드 스플리팅을 통해 성능 최적화를 할 수 있습니다.",
+    ],
+  },
+  {
+    id: "ts-js",
+    name: "TypeScript / JavaScript",
+    icon: ts,
+    descriptions: [
+      "타입을 정하여 런타임 에러를 사전에 방지할 수 있습니다.",
+      "Axios를 사용하여 데이터 동기, 비동기 처리를 능숙하게 다룹니다.",
+    ],
+  },
+  {
+    id: "styling",
+    name: "Tailwind",
+    icon: tailwind,
+    descriptions: [
+      "다양한 형태의 반응형 레이아웃을 구성할 수 있습니다.",
+      "상태에 따른 동적 스타일링이 가능합니다.",
+    ],
+  },
+  {
+    id: "zustand",
+    name: "Zustand",
+    icon: zustand,
+    descriptions: [
+      "전역 상태 관리에 대한 이해도가 있습니다.",
+      "Persist 옵션을 사용해 Storage에서 상태 값을 다룰 수 있습니다.",
+    ],
+  },
+  {
+    id: "tanstack",
+    name: "TanStack Query",
+    icon: tanstack, // ✨ 알맞은 아이콘 변수로 변경해주세요
+    descriptions: [
+      "서버 상태 관리와 데이터 캐싱을 효율적으로 처리할 수 있습니다.",
+      "비동기 데이터의 로딩(Loading) 및 에러(Error) 상태를 선언적으로 관리합니다.",
+    ],
+  },
+];
 
 function Skills() {
   return (
-    <div className="desktop:px-8 tablet:px-5 mobile:px-3 desktop:py-24 tablet:py-16 mobile:py-9 text-white">
-      <div className="desktop:max-w-[1240px] mobile:min-w-[320px] mx-auto flex flex-col ">
-        <h2 className="desktop:text-5xl tablet:text-3xl mobile:text-xl font-semibold font-gm text-white mb-10">
-          Skills
-        </h2>
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-10 rounded-2xl">
-            <div className="grid grid-auto-rows-[1fr] desktop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-5 desktop:text-lg mobile:text-base font-medium">
-              <div className="flex flex-col gap-3 bg-[#000000] p-7 rounded-xl flex-grow">
-                <div className="bg-[#121212] w-12 h-12 rounded-full flex items-center justify-center">
+    // ✨ 1. 전체를 감싸는 section 태그 추가 (상하 여백 py-24 지정)
+    <section className="w-full py-24 text-white">
+      {/* ✨ 2. 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
+        {/* Section Title (시안색 마침표 추가) */}
+        <div className="mb-12 border-b border-gray-800 pb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-gm tracking-tight">
+            Skills<span className="text-cyan-500">.</span>
+          </h2>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsData.map((skill) => (
+            <div
+              key={skill.id}
+              className="group flex flex-col gap-5 bg-gray-900/40 border border-gray-800/50 p-7 rounded-2xl transition-all duration-300 hover:bg-gray-800/60 hover:-translate-y-2 hover:border-cyan-500/30 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)]"
+            >
+              {/* Icon & Title Header */}
+              <div className="flex items-center gap-4">
+                <div className="bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:bg-gray-700 transition-colors">
                   <img
-                    className="desktop:w-9 tablet:w-9 mobile:w-9"
-                    src={react}
-                    alt="react 이미지"
+                    className="w-8 h-8 object-contain"
+                    src={skill.icon}
+                    alt={`${skill.name} 아이콘`}
                   />
                 </div>
-                <h3 className="text-2xl font-pre">React</h3>
-
-                <div className="flex flex-col gap-2 font-light">
-                  <span>컴포넌트를 분할하여 재사용성을 높힙니다.</span>
-                  <span>다양한 라이브러리를 활용할 수 있습니다.</span>
-                  <span>Vite를 사용하여 빌드 할 수 있습니다.</span>
-                  <span>코드 스플리팅을 하여 성능최적화를 할 수 있습니다.</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3 bg-[#000000] p-7 rounded-xl flex-grow">
-                <div className="bg-[#121212] w-12 h-12 rounded-full flex items-center justify-center">
-                  <img
-                    className="desktop:w-9 tablet:w-9 mobile:w-9"
-                    src={ts}
-                    alt="typeScript 이미지"
-                  />
-                </div>
-
-                <h3 className="text-2xl font-pre">TypeScript / JavaScript</h3>
-
-                <div className="flex flex-col gap-2 font-light">
-                  <span>타입을 정하여 에러를 사전에 방지 할 수 있습니다.</span>
-                  <span>
-                    Axios를 사용하여 데이터 동기, 비동기 처리를 할 수 있습니다.
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3 bg-[#000000] p-7 rounded-xl flex-grow">
-                <div className="bg-[#121212] w-12 h-12 rounded-full flex items-center justify-center">
-                  <img
-                    className="desktop:w-9 tablet:w-9 mobile:w-9"
-                    src={tailwind}
-                    alt="tailwind 이미지"
-                  />
-                </div>
-
-                <h3 className="text-2xl font-pre">
-                  Tailwind / Styled-component
+                <h3 className="text-xl md:text-2xl font-semibold font-pre text-white">
+                  {skill.name}
                 </h3>
-
-                <div className="flex flex-col gap-2 font-light">
-                  <span>다양한 형태의 레이아웃을 구성할 수 있습니다.</span>
-                  <span>동적 스타일링이 가능합니다.</span>
-                </div>
               </div>
 
-              <div className="flex flex-col gap-3 bg-[#000000] p-7 rounded-xl flex-grow">
-                <div className="bg-[#121212] w-12 h-12 rounded-full flex items-center justify-center">
-                  <img
-                    className="desktop:w-9 tablet:w-9 mobile:w-9"
-                    src={zustand}
-                    alt="zustand 이미지"
-                  />
-                </div>
-                <h3 className="text-2xl font-pre">Zustand</h3>
-
-                <div className="flex flex-col gap-2 font-light">
-                  <span>전역 상태에 대해 이해하고 있습니다.</span>
-                  <span>
-                    Persist 옵션을 사용해 Storage에서 상태 값을 다룰 수
-                    있습니다.
-                  </span>
-                </div>
-              </div>
+              {/* Descriptions List */}
+              <ul className="flex flex-col gap-3 mt-2">
+                {skill.descriptions.map((desc, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-gray-400 text-sm md:text-base leading-relaxed"
+                  >
+                    <ChevronRight
+                      className="w-4 h-4 text-cyan-500 mt-1 shrink-0"
+                      strokeWidth={2.5}
+                    />
+                    <span>{desc}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

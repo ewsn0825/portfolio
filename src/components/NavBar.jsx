@@ -1,72 +1,124 @@
-import { useState, useEffect } from "react";
-import logo2 from "@/assets/logo2.png";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 
 function NavBar() {
   const [isSticky, setSticky] = useState(false);
-  const [activeLink, setActiveLink] = useState(""); // 클릭된 링크를 추적하는 상태
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+  const navRefs = useRef({});
+  const isClickScrolling = useRef(false);
+  const scrollTimeout = useRef(null);
 
   const handleScroll = () => {
-    setSticky(window.scrollY > 0);
-  };
-
-  const handleSetActive = (link) => {
-    setActiveLink(link); // 클릭된 링크를 설정
+    setSticky(window.scrollY > 10);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
+    // 리사이즈 시 인디케이터 위치 재조정 (화면 크기가 변할 때 선이 어긋나는 것 방지)
+    const handleResize = () => {
+      const activeLink = document.querySelector(".active-nav-link");
+      if (activeLink) {
+        const to = activeLink.getAttribute("data-to");
+        updateIndicator(to);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
   }, []);
 
+  const updateIndicator = (to) => {
+    const activeElement = navRefs.current[to];
+    if (activeElement) {
+      setIndicatorStyle({
+        left: activeElement.offsetLeft,
+        width: activeElement.offsetWidth,
+        opacity: 1,
+      });
+    }
+  };
+
+  const handleSetActive = (to) => {
+    if (isClickScrolling.current) return;
+    updateIndicator(to);
+  };
+
+  const handleNavClick = (to) => {
+    isClickScrolling.current = true;
+    updateIndicator(to);
+
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 600);
+  };
+
+  const navLinks = ["about", "experience", "skills", "projects", "contact"];
+
   return (
-    <div
-      className={`${
+    <nav
+      className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
         isSticky
-          ? "sticky top-0 z-50 shadow bg-opacity-80 backdrop-blur transition-blur"
-          : ""
-      } bg-white`}
+          ? "bg-[#050505]/80 backdrop-blur-md border-b border-gray-800 shadow-lg py-3"
+          : "bg-transparent py-5"
+      }`}
     >
-      {/* desktop:w-[1240px] tablet:w-[768px] mobile:w-[320px] m-auto */}
-      <div className="desktop:max-w-[1240px] mobile:min-w-[320px] m-auto">
-        <div className="flex justify-between items-center desktop:p-4 tablet:p-3 mobile:p-2">
-          <Link to="header" smooth={true} duration={500}>
-            <h1 className="mobile:hidden desktop:block tablet:block font-gm font-bold desktop:text-2xl tablet:text-md cursor-pointer">
-              JH_Portfolio
-              {/* <img
-                src={logo2}
-                alt="이재호 포트폴리오"
-                className="w-12 cursor-pointer bg-transparent"
-              /> */}
-            </h1>
-          </Link>
-          <ul className="flex desktop:gap-7 font-normal desktop:flex-[0] tablet:flex-[0.5] desktop:text-base mobile:flex-1 mobile:items-center mobile:justify-evenly mobile:text-xs mobile:gap-3">
-            {["about", "experience", "skills", "projects", "contact"].map(
-              (link) => (
-                <li
-                  key={link}
-                  className={`cursor-pointer ${
-                    activeLink === link ? "font-bold" : ""
-                  }`}
-                >
-                  <Link
-                    to={link}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => handleSetActive(link)} // Link 컴포넌트에서 직접 함수 호출
-                  >
-                    {link.charAt(0).toUpperCase() + link.slice(1)}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-        </div>
+      {/* ✨ 모든 섹션과 동일한 1200px 공통 레이아웃 적용 */}
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 flex justify-between items-center">
+        <Link
+          to="header"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer"
+        >
+          <h1 className="hidden md:block font-gm font-bold text-2xl text-white tracking-wider hover:text-cyan-400 transition-colors">
+            Largon<span className="text-cyan-500">.</span>
+          </h1>
+        </Link>
+
+        <ul className="relative flex flex-1 md:flex-none justify-between md:justify-end md:gap-10 items-center text-sm md:text-base font-medium">
+          {navLinks.map((link) => (
+            <li
+              key={link}
+              className="py-2"
+              ref={(el) => (navRefs.current[link] = el)}
+            >
+              <Link
+                to={link}
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onSetActive={handleSetActive}
+                onClick={() => handleNavClick(link)}
+                activeClass="text-cyan-400 active-nav-link"
+                data-to={link}
+                className="cursor-pointer text-gray-400 hover:text-white transition-colors block"
+              >
+                {link.charAt(0).toUpperCase() + link.slice(1)}
+              </Link>
+            </li>
+          ))}
+          <div
+            className="absolute bottom-0 h-[2px] bg-cyan-400 transition-all duration-300 ease-out"
+            style={{
+              left: `${indicatorStyle.left}px`,
+              width: `${indicatorStyle.width}px`,
+              opacity: indicatorStyle.opacity,
+            }}
+          />
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
