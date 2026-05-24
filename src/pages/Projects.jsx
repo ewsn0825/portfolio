@@ -1,9 +1,82 @@
 import geppetto from "@/assets/project/geppetto.png";
 import portfolio from "@/assets/project/portfolio.png";
+import asset from "@/assets/project/asset-dashboard.png";
 import { motion } from "framer-motion";
 
 // ✨ PROJECTS_DATA: 포트폴리오를 배열의 첫 번째(상단) 요소로 배치했습니다.
 const PROJECTS_DATA = [
+  {
+    id: "asset-dashboard",
+    title: "Asset Dashboard", // 더 직관적인 제목으로 수정
+    type: "개인 프로젝트",
+    period: "2026.04 - 2026.05",
+    image: asset,
+    description:
+      "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. TanStack Query를 통한 서버 상태 관리와 Redis 기반의 효율적인 인증 로직을 도입하여 데이터 일관성과 앱 성능을 극대화했습니다.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+    links: {
+      web: "https://asset-dashboard-lovat.vercel.app",
+      github: "https://github.com/ewsn0825/asset-dashboard",
+    },
+    features: [
+      {
+        title: "실시간 자산 시각화",
+        details: [
+          "종목별/계좌별 자산 구성비 차트 제공",
+          "실시간 환율 및 시세 데이터 연동",
+        ],
+      },
+      {
+        title: "사용자 인증/인가",
+        details: [
+          "Axios Interceptor를 통한 토큰 자동 갱신",
+          "Redis 기반 세션 관리 최적화",
+        ],
+      },
+      {
+        title: "통합 대시보드",
+        details: [
+          "주식/CMA/ISA 통합 자산 관리",
+          "디바운싱을 적용한 검색 최적화",
+        ],
+      },
+    ],
+    troubleshooting: [
+      {
+        title: "디바운싱을 통한 검색 API 최적화",
+        problem:
+          "검색 및 금액 입력 시 onChange마다 API가 호출되어 네트워크 리소스 낭비 및 렌더링 부하 발생.",
+        solution:
+          "커스텀 훅(useDebounce)을 구현하여 입력 종료 후 300~500ms 지연 후 API를 호출하도록 로직 분리.",
+        learned:
+          "불필요한 네트워크 요청을 차단하여 UI 반응 속도를 개선하고 브라우저 성능을 최적화하는 과정을 경험했습니다.",
+      },
+      {
+        title: "TanStack Query로 서버 상태 캐싱",
+        problem:
+          "탭 이동 시마다 동일한 데이터를 매번 패칭하여 발생하는 로딩 지연과 UX 저하 문제.",
+        solution:
+          "TanStack Query를 도입하여 staleTime과 gcTime을 데이터 특성에 맞게 설정하고 클라이언트/서버 상태를 분리.",
+        learned:
+          "적절한 캐싱 전략이 Zero-loading 환경을 만들어 사용자 체감 성능을 극대화함을 확인했습니다.",
+      },
+      {
+        title: "인증 로직 및 DB 병목 개선",
+        problem:
+          "토큰 갱신 과정에서 RDBMS 조회로 인한 응답 지연 및 메인 DB 부하 우려.",
+        solution:
+          "리프레시 토큰을 Redis(인메모리 저장소)로 이전하여 인증 속도를 향상하고, Axios Interceptor로 토큰 재발급 자동화 구현.",
+        learned:
+          "인메모리 저장소를 활용한 아키텍처 개선으로 서버 안정성과 자연스러운 인증 UX를 구현하는 법을 배웠습니다.",
+      },
+    ],
+  },
   {
     id: "portfolio",
     title: "Largon Portfolio",
@@ -15,7 +88,7 @@ const PROJECTS_DATA = [
     // ✨ 포트폴리오의 실제 기술 스택으로 최신화
     techStack: ["React", "Tailwind CSS", "Framer Motion", "React Scroll"],
     links: {
-      web: "https://jadeportfolio.vercel.app",
+      web: "https://largonportfolio.vercel.app",
       github: "https://github.com/ewsn0825/portfolio",
     },
     features: [
