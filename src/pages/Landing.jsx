@@ -27,16 +27,16 @@ function Landing() {
 
       {/* 메인 랜딩 영역 */}
       <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6">
-        {/* ✨ 성능 최적화: 배경 파티클에 pointer-events-none 및 will-change 추가로 GPU 가속 유도 */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"></div>
+        {/* ✨ 모바일 성능 최적화: 렌더링 부하가 큰 블러 이펙트는 md(태블릿) 이상에서만 표시 */}
+        <div className="hidden md:block absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"></div>
         <div
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"
+          className="hidden md:block absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"
           style={{ animationDelay: "2s" }}
         ></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
         {/* 텍스트 컨텐츠 및 스켈레톤 (중앙 정렬) */}
-        {/* ✨ 성능 최적화: CLS(레이아웃 시프트) 방지를 위해 고정 최소 높이(min-h-[400px]) 부여 */}
+        {/* CLS(레이아웃 시프트) 방지를 위해 고정 최소 높이(min-h-[400px]) 부여 */}
         <div className="relative z-10 flex flex-col items-center justify-center gap-8 w-full max-w-4xl min-h-[400px]">
           {!isLoaded ? (
             <div className="flex flex-col items-center gap-8 w-full animate-pulse">
@@ -138,7 +138,7 @@ function Landing() {
       <div className="flex flex-col relative z-10 bg-[#050505]">
         <Suspense
           fallback={
-            // ✨ 성능 최적화: fallback 영역의 높이를 충분히 확보하여 화면 덜컹거림 최소화
+            // 성능 최적화: fallback 영역의 높이를 충분히 확보하여 화면 덜컹거림 최소화
             <div className="w-full min-h-[800px] flex flex-col items-center justify-center animate-pulse bg-[#0a0b10]/50">
               <div className="w-12 h-12 border-4 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
               <span className="text-cyan-500/50 text-sm font-medium tracking-widest">

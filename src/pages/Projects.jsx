@@ -1,6 +1,6 @@
-import geppetto from "@/assets/project/geppetto.png";
-import portfolio from "@/assets/project/portfolio.png";
-import asset from "@/assets/project/asset-dashboard.png";
+import geppetto from "@/assets/project/geppetto.webp";
+import portfolio from "@/assets/project/portfolio.webp";
+import asset from "@/assets/project/asset-dashboard.webp";
 import { motion } from "framer-motion";
 
 const PROJECTS_DATA = [

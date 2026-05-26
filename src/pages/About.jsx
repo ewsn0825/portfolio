@@ -1,4 +1,4 @@
-import profile from "@/assets/profile.jpg";
+import profile from "@/assets/profile.webp";
 // 터미널에서 npm install lucide-react 를 입력하여 아이콘 라이브러리를 설치해 주세요.
 import { User, Calendar, MapPin, GraduationCap, Mail } from "lucide-react";
 

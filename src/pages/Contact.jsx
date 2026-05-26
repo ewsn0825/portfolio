@@ -1,5 +1,5 @@
-import github from "@/assets/icon/github.png";
-import instagram from "@/assets/icon/instagram.png";
+import github from "@/assets/icon/github.webp";
+import instagram from "@/assets/icon/instagram.webp";
 
 function Contact() {
   return (
