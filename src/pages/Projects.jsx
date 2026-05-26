@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
 const PROJECTS_DATA = [
   {
     id: "asset-dashboard",
-    title: "Asset Dashboard", // 더 직관적인 제목으로 수정
+    title: "Asset Dashboard",
     type: "개인 프로젝트",
     period: "2026.04 - 2026.05",
     image: asset,
     description:
-      "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. TanStack Query를 통한 서버 상태 관리와 Redis 기반의 효율적인 인증 로직을 도입하여 데이터 일관성과 앱 성능을 극대화했습니다.",
+      "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. 실제 주식 매수/매도 기능을 구현하며 외부 API 연동의 한계를 극복하고, 낙관적 업데이트를 통해 사용자 경험(UX)과 데이터 일관성을 극대화했습니다.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -33,38 +33,38 @@ const PROJECTS_DATA = [
         ],
       },
       {
+        title: "주식 매수/매도 및 신규 주문",
+        details: [
+          "한국투자증권 API 연동을 통한 실거래 로직 구현",
+          "낙관적 업데이트(Optimistic Update)로 즉각적인 자산/예수금 반영",
+        ],
+      },
+      {
         title: "사용자 인증/인가",
         details: [
           "Axios Interceptor를 통한 토큰 자동 갱신",
           "Redis 기반 세션 관리 최적화",
         ],
       },
-      {
-        title: "통합 대시보드",
-        details: [
-          "주식/CMA/ISA 통합 자산 관리",
-          "디바운싱을 적용한 검색 최적화",
-        ],
-      },
     ],
     troubleshooting: [
       {
-        title: "디바운싱을 통한 검색 API 최적화",
+        title: "API 호가 단위 에러 및 Rate Limit 해결",
         problem:
-          "검색 및 금액 입력 시 onChange마다 API가 호출되어 네트워크 리소스 낭비 및 렌더링 부하 발생.",
+          "시장가 주문 시 거래소 규정에 맞지 않는 호가 단위 에러가 발생하고, 잦은 클릭 요청으로 API Rate Limit이 초과되는 문제 발생.",
         solution:
-          "커스텀 훅(useDebounce)을 구현하여 입력 종료 후 300~500ms 지연 후 API를 호출하도록 로직 분리.",
+          "주문 방식을 정확한 호가 단위가 적용된 '지정가 주문'으로 전환하고, 중복 요청 방지를 위한 잠금(Lock) 장치를 도입하여 API 호출 안정성을 확보했습니다.",
         learned:
-          "불필요한 네트워크 요청을 차단하여 UI 반응 속도를 개선하고 브라우저 성능을 최적화하는 과정을 경험했습니다.",
+          "외부 금융 API 연동 시 거래소의 세부적인 정책을 꼼꼼히 파악해야 하며, API 호출 빈도를 제어하는 방어적 프로그래밍의 중요성을 배웠습니다.",
       },
       {
-        title: "TanStack Query로 서버 상태 캐싱",
+        title: "낙관적 업데이트를 통한 매수/매도 UX 개선",
         problem:
-          "탭 이동 시마다 동일한 데이터를 매번 패칭하여 발생하는 로딩 지연과 UX 저하 문제.",
+          "주문 후 서버 응답을 기다리는 동안 자산 및 예수금 변동이 즉시 UI에 반영되지 않아 답답함을 유발하고, 금액 계산 시 소수점 오차가 발생.",
         solution:
-          "TanStack Query를 도입하여 staleTime과 gcTime을 데이터 특성에 맞게 설정하고 클라이언트/서버 상태를 분리.",
+          "TanStack Query의 낙관적 업데이트(Optimistic Update)를 도입해 주문 즉시 변경된 자산을 반영하고, 금액 데이터는 소수점 버림 처리로 정합성을 맞췄습니다.",
         learned:
-          "적절한 캐싱 전략이 Zero-loading 환경을 만들어 사용자 체감 성능을 극대화함을 확인했습니다.",
+          "서버 통신 지연 시간을 체감하지 못하도록 UI 상태를 선제적으로 제어하는 기법과, 금융 데이터의 엄격한 수치 처리 방법을 경험했습니다.",
       },
       {
         title: "인증 로직 및 DB 병목 개선",
@@ -85,7 +85,6 @@ const PROJECTS_DATA = [
     image: portfolio,
     description:
       "저의 인적사항 및 기술 스택, 프로젝트들을 정리하기 위해 만든 반응형 포트폴리오 웹 사이트입니다. 부드러운 스크롤 인터랙션과 다크 테마 디자인을 적용했습니다.",
-    // ✨ 포트폴리오의 실제 기술 스택으로 최신화
     techStack: ["React", "Tailwind CSS", "Framer Motion", "React Scroll"],
     links: {
       web: "https://largonportfolio.vercel.app",
@@ -123,6 +122,16 @@ const PROJECTS_DATA = [
           "모든 섹션에 공통 1200px 그리드 레이아웃을 적용하고, NavBar와 콘텐츠의 시작점을 수직으로 일치시켜 정렬을 최적화했습니다.",
         learned:
           "사용자에게 안정감을 주는 인터페이스는 일관된 규격과 그리드 시스템에서 시작됨을 체감하였습니다.",
+      },
+      // ✨ 추가된 트러블슈팅 항목: 웹 바이탈 및 웹 폰트 최적화
+      {
+        title: "웹 폰트 및 비동기 스플리팅을 통한 Lighthouse 성능 최적화",
+        problem:
+          "대용량 웹 폰트 서빙으로 인해 렌더링 차단 리소스(Render-blocking)가 발생하고, 초기 번들 크기가 무거워 Lighthouse 성능 점수가 40점대로 저조하게 측정됨.",
+        solution:
+          "압축률이 높은 woff2 포맷의 다이나믹 서브셋 가변 폰트로 교체하고, 미디어 쿼리 트릭을 활용해 비동기 폰트 로드를 구현했습니다. 또한 React.lazy와 Suspense를 도입해 하위 섹션들을 코드 스플리팅 처리했습니다.",
+        learned:
+          "한글 웹 폰트 파싱이 LCP 및 CLS 지표에 미치는 영향을 체감했으며, 조건부 로딩 아키텍처 구성을 통해 실제 사용자 기준 초기 로딩 경험 및 렌더링 속도를 개선하여 점수를 90점대 이상으로 끌어올렸습니다.",
       },
     ],
   },

@@ -3,6 +3,7 @@ import react from "@/assets/skill/react_n.svg";
 import zustand from "@/assets/skill/zustand_d.svg";
 import ts from "@/assets/skill/ts_d.svg";
 import tanstack from "@/assets/skill/tanstack.svg";
+import next from "@/assets/skill/Next.js.svg";
 // lucide-react에서 화살표 아이콘 추가
 import { ChevronRight } from "lucide-react";
 
@@ -49,10 +50,19 @@ const skillsData = [
   {
     id: "tanstack",
     name: "TanStack Query",
-    icon: tanstack, // ✨ 알맞은 아이콘 변수로 변경해주세요
+    icon: tanstack,
     descriptions: [
       "서버 상태 관리와 데이터 캐싱을 효율적으로 처리할 수 있습니다.",
       "비동기 데이터의 로딩(Loading) 및 에러(Error) 상태를 선언적으로 관리합니다.",
+    ],
+  },
+  {
+    id: "next",
+    name: "Next.js",
+    icon: next,
+    descriptions: [
+      "서버 사이드 렌더링(SSR)의 원리를 이해하고, 하이드레이션(Hydration) 관련 트러블슈팅을 해결할 수 있습니다.",
+      "라우팅 시스템을 활용하여 조건에 따른 페이지 이동 및 데이터 필터링 로직을 직관적으로 구현합니다.",
     ],
   },
 ];
@@ -80,8 +90,13 @@ function Skills() {
               {/* Icon & Title Header */}
               <div className="flex items-center gap-4">
                 <div className="bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:bg-gray-700 transition-colors">
+                  {/* ✨ 이미지 색상 변경: 어두운 배경에서 검은색 아이콘이 보이도록 invert(색상 반전) 적용 */}
                   <img
-                    className="w-8 h-8 object-contain"
+                    className={`w-8 h-8 object-contain ${
+                      skill.id === "tanstack" || skill.id === "next"
+                        ? "invert brightness-0 filter" // 검은색 SVG를 완전히 하얗게 만듭니다
+                        : ""
+                    }`}
                     src={skill.icon}
                     alt={`${skill.name} 아이콘`}
                   />

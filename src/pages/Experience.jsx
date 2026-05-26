@@ -30,7 +30,7 @@ function Experience() {
               </div>
 
               <p className="text-gray-400 mb-6 leading-relaxed">
-                농협은행 신탁자산운용 플랫폼 전화를 위한 프로젝트에
+                농협은행 신탁자산운용 플랫폼 고도화를 위한 프로젝트에
                 참여하였습니다. 넥사크로 플랫폼을 사용한 화면 개발을 수행했으며,
                 크로닉스 리포트(Cronix Report)를 활용하여 데이터를 시각화하고
                 보고서를 생성하였습니다. 특히, Oracle 환경에서 쿼리를 관리하고{" "}
