@@ -122,14 +122,15 @@ const PROJECTS_DATA = [
         learned:
           "사용자에게 안정감을 주는 인터페이스는 일관된 규격과 그리드 시스템에서 시작됨을 체감하였습니다.",
       },
+      // ✨ 핵심 트러블슈팅 업데이트: Lighthouse 성능 최적화 (73점 -> 87점)
       {
-        title: "웹 폰트 및 비동기 스플리팅을 통한 Lighthouse 성능 최적화",
+        title: "웹 자원 최적화를 통한 성능(Lighthouse) 개선 (73점 ➡️ 87점)",
         problem:
-          "대용량 웹 폰트 서빙으로 인해 렌더링 차단 리소스(Render-blocking)가 발생하고, 초기 번들 크기가 무거워 Lighthouse 성능 점수가 40점대로 저조하게 측정됨.",
+          "대용량 웹 폰트(2MB 이상)와 고화질 썸네일(PNG), 무거운 모바일 CSS 렌더링으로 인해 초기 TBT(총 차단 시간)와 LCP 지연이 발생하며 모바일 성능 점수가 73점으로 저조함.",
         solution:
-          "압축률이 높은 woff2 포맷의 다이나믹 서브셋 가변 폰트로 교체하고, 미디어 쿼리 트릭을 활용해 비동기 폰트 로드를 구현했습니다. 또한 React.lazy와 Suspense를 도입해 하위 섹션들을 코드 스플리팅 처리했습니다.",
+          "1. React.lazy & Suspense로 컴포넌트를 스플리팅하여 초기 번들 사이즈 감소\n2. 고화질 PNG 이미지를 무손실 WebP 포맷으로 변환(70% 용량 감소) 및 loading='lazy' 적용\n3. 폰트를 woff2 다이나믹 서브셋으로 교체 및 비동기 로드\n4. 모바일 GPU 부하를 일으키는 Blur 필터를 반응형으로 숨김 처리",
         learned:
-          "한글 웹 폰트 파싱이 LCP 및 CLS 지표에 미치는 영향을 체감했으며, 조건부 로딩 아키텍처 구성을 통해 실제 사용자 기준 초기 로딩 경험 및 렌더링 속도를 개선하여 점수를 90점대 이상으로 끌어올렸습니다.",
+          "프론트엔드 환경에서 네트워크 리소스(폰트/이미지) 관리와 렌더링 파이프라인 제어가 실제 사용자 경험(Web Vitals) 지표에 미치는 결정적인 영향을 체감했습니다.",
       },
     ],
   },
@@ -199,7 +200,6 @@ function Projects() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              // ✨ 뷰포트 최적화: 요소가 20% 보일 때 한 번만 트리거되도록 조정
               viewport={{ once: true, amount: 0.2 }}
               className="flex flex-col bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-[2rem] overflow-hidden"
             >
@@ -210,7 +210,6 @@ function Projects() {
                       src={project.image}
                       alt={project.title}
                       className="w-full rounded-xl shadow-2xl border border-gray-700/50"
-                      // ✨ 핵심 최적화: 이미지 지연 로딩 및 비동기 디코딩 적용
                       loading="lazy"
                       decoding="async"
                     />
@@ -310,7 +309,8 @@ function Projects() {
                             {item.title}
                           </h5>
                         </div>
-                        <div className="p-5 flex flex-col gap-4 text-sm font-neo">
+                        <div className="p-5 flex flex-col gap-4 text-sm font-neo whitespace-pre-line">
+                          {/* whitespace-pre-line 클래스를 추가하여 solution 항목의 줄바꿈(\n)이 적용되도록 수정했습니다. */}
                           <div>
                             <span className="text-red-400 font-neoBold mb-1 block">
                               🔥 문제 발생
