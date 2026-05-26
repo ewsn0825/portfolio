@@ -69,9 +69,9 @@ const skillsData = [
 
 function Skills() {
   return (
-    // ✨ 1. 전체를 감싸는 section 태그 추가 (상하 여백 py-24 지정)
-    <section className="w-full py-24 text-white">
-      {/* ✨ 2. 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
+    // 전체를 감싸는 section 태그 추가 (상하 여백 py-24 지정)
+    <section id="skills" className="w-full py-24 text-white">
+      {/* 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Section Title (시안색 마침표 추가) */}
         <div className="mb-12 border-b border-gray-800 pb-6">
@@ -90,7 +90,7 @@ function Skills() {
               {/* Icon & Title Header */}
               <div className="flex items-center gap-4">
                 <div className="bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center border border-gray-700/50 group-hover:bg-gray-700 transition-colors">
-                  {/* ✨ 이미지 색상 변경: 어두운 배경에서 검은색 아이콘이 보이도록 invert(색상 반전) 적용 */}
+                  {/* ✨ 성능 최적화: 이미지 지연 로딩 및 비동기 디코딩 적용 */}
                   <img
                     className={`w-8 h-8 object-contain ${
                       skill.id === "tanstack" || skill.id === "next"
@@ -99,6 +99,8 @@ function Skills() {
                     }`}
                     src={skill.icon}
                     alt={`${skill.name} 아이콘`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold font-pre text-white">

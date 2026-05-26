@@ -3,7 +3,6 @@ import portfolio from "@/assets/project/portfolio.png";
 import asset from "@/assets/project/asset-dashboard.png";
 import { motion } from "framer-motion";
 
-// ✨ PROJECTS_DATA: 포트폴리오를 배열의 첫 번째(상단) 요소로 배치했습니다.
 const PROJECTS_DATA = [
   {
     id: "asset-dashboard",
@@ -123,7 +122,6 @@ const PROJECTS_DATA = [
         learned:
           "사용자에게 안정감을 주는 인터페이스는 일관된 규격과 그리드 시스템에서 시작됨을 체감하였습니다.",
       },
-      // ✨ 추가된 트러블슈팅 항목: 웹 바이탈 및 웹 폰트 최적화
       {
         title: "웹 폰트 및 비동기 스플리팅을 통한 Lighthouse 성능 최적화",
         problem:
@@ -201,7 +199,8 @@ function Projects() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              // ✨ 뷰포트 최적화: 요소가 20% 보일 때 한 번만 트리거되도록 조정
+              viewport={{ once: true, amount: 0.2 }}
               className="flex flex-col bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-[2rem] overflow-hidden"
             >
               <div className="grid lg:grid-cols-2 gap-0 border-b border-gray-800">
@@ -211,6 +210,9 @@ function Projects() {
                       src={project.image}
                       alt={project.title}
                       className="w-full rounded-xl shadow-2xl border border-gray-700/50"
+                      // ✨ 핵심 최적화: 이미지 지연 로딩 및 비동기 디코딩 적용
+                      loading="lazy"
+                      decoding="async"
                     />
                   )}
                 </div>

@@ -2,8 +2,7 @@ import NavBar from "../components/NavBar";
 import { Element, Link as ScrollLink } from "react-scroll";
 import { useState, useEffect, Suspense, lazy } from "react";
 
-// ✨ React.lazy를 사용하여 하위 컴포넌트들을 비동기적으로 불러옵니다.
-// 초기 랜딩 속도를 크게 향상시킬 수 있습니다.
+// React.lazy를 사용하여 하위 컴포넌트들을 비동기적으로 불러옵니다.
 const About = lazy(() => import("./About"));
 const Experience = lazy(() => import("./Experience"));
 const Skills = lazy(() => import("./Skills"));
@@ -14,7 +13,6 @@ function Landing() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // 최상단 랜딩 영역의 텍스트와 버튼이 나타나기 전 짧은 딜레이
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 800);
@@ -27,20 +25,20 @@ function Landing() {
       <Element name="header"></Element>
       <NavBar />
 
-      {/* ✨ 메인 랜딩 영역: 브라우저 화면 전체(w-full)를 기준으로 중앙 정렬 */}
+      {/* 메인 랜딩 영역 */}
       <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6">
-        {/* 블러 파티클 (배경) */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
+        {/* ✨ 성능 최적화: 배경 파티클에 pointer-events-none 및 will-change 추가로 GPU 가속 유도 */}
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"></div>
         <div
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"
+          className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-pulse pointer-events-none will-change-opacity"
           style={{ animationDelay: "2s" }}
         ></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
         {/* 텍스트 컨텐츠 및 스켈레톤 (중앙 정렬) */}
-        <div className="relative z-10 flex flex-col items-center gap-8 w-full max-w-4xl">
+        {/* ✨ 성능 최적화: CLS(레이아웃 시프트) 방지를 위해 고정 최소 높이(min-h-[400px]) 부여 */}
+        <div className="relative z-10 flex flex-col items-center justify-center gap-8 w-full max-w-4xl min-h-[400px]">
           {!isLoaded ? (
-            // 랜딩 타이틀 스켈레톤 UI
             <div className="flex flex-col items-center gap-8 w-full animate-pulse">
               <div className="h-6 w-32 bg-gray-800 rounded-full"></div>
 
@@ -60,7 +58,6 @@ function Landing() {
               </div>
             </div>
           ) : (
-            // 실제 랜딩 텍스트 콘텐츠
             <div className="flex flex-col items-center gap-8 transition-all duration-1000 transform translate-y-0 opacity-100">
               <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-semibold tracking-widest text-cyan-400 uppercase">
                 Frontend Developer
@@ -108,7 +105,7 @@ function Landing() {
           )}
         </div>
 
-        {/* ✨ 스크롤 버튼: 완벽한 정중앙 고정 */}
+        {/* 스크롤 버튼 */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
           <ScrollLink
             to="about"
@@ -137,12 +134,12 @@ function Landing() {
         </div>
       </div>
 
-      {/* ✨ 하위 섹션들 렌더링: Suspense를 통해 비동기 로딩 관리 */}
+      {/* 하위 섹션들 렌더링: Suspense를 통해 비동기 로딩 관리 */}
       <div className="flex flex-col relative z-10 bg-[#050505]">
         <Suspense
           fallback={
-            // 컴포넌트가 로드되는 동안 보여줄 공통 로딩 스피너 UI
-            <div className="w-full py-40 flex flex-col items-center justify-center animate-pulse bg-[#0a0b10]/50">
+            // ✨ 성능 최적화: fallback 영역의 높이를 충분히 확보하여 화면 덜컹거림 최소화
+            <div className="w-full min-h-[800px] flex flex-col items-center justify-center animate-pulse bg-[#0a0b10]/50">
               <div className="w-12 h-12 border-4 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
               <span className="text-cyan-500/50 text-sm font-medium tracking-widest">
                 LOADING
