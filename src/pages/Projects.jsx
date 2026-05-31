@@ -11,13 +11,14 @@ const PROJECTS_DATA = [
     period: "2026.04 - 2026.05",
     image: asset,
     description:
-      "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. 실제 주식 매수/매도 기능을 구현하며 외부 API 연동의 한계를 극복하고, 낙관적 업데이트를 통해 사용자 경험(UX)과 데이터 일관성을 극대화했습니다.",
+      "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. 실제 주식 매수/매도 기능을 구현하며 외부 API 연동의 한계를 극복하고, 낙관적 업데이트 및 전역 상태 구조 리팩토링을 통해 대용량 데이터 환경에서의 렌더링 성능과 UX를 극대화했습니다.",
     techStack: [
       "Next.js",
       "TypeScript",
       "TanStack Query",
       "Zustand",
       "Tailwind CSS",
+      "Gemini API",
     ],
     links: {
       web: "https://asset-dashboard-lovat.vercel.app",
@@ -65,14 +66,15 @@ const PROJECTS_DATA = [
         learned:
           "서버 통신 지연 시간을 체감하지 못하도록 UI 상태를 선제적으로 제어하는 기법과, 금융 데이터의 엄격한 수치 처리 방법을 경험했습니다.",
       },
+      // ✨ 복잡한 리팩토링 대신 '실질적인 프론트엔드 성능 개선' 스토리로 전면 수정
       {
-        title: "인증 로직 및 DB 병목 개선",
+        title: "상태 관리 구조 리팩토링 및 불필요한 전역 리렌더링 방지",
         problem:
-          "토큰 갱신 과정에서 RDBMS 조회로 인한 응답 지연 및 메인 DB 부하 우려.",
+          "실시간 시세 변동 및 계좌 탭 전환 시, Zustand 전역 스토어의 무분별한 참조로 인해 연관 없는 하위 컴포넌트까지 동반 리렌더링되며 화면이 튀고 버벅이는 성능 병목 발생.",
         solution:
-          "리프레시 토큰을 Redis(인메모리 저장소)로 이전하여 인증 속도를 향상하고, Axios Interceptor로 토큰 재발급 자동화 구현.",
+          "Zustand 스토어 참조 방식을 개별 셀렉터 분리 및 shallow(얕은 비교) 모듈 적용으로 전환하여 상태 변경 시 필요한 컴포넌트만 정밀 트리거되도록 개선했습니다. 대용량 복잡 필터링 로직은 useMemo로 캡슐화하고 무거운 뷰는 next/dynamic으로 지연 로딩 처리했습니다.",
         learned:
-          "인메모리 저장소를 활용한 아키텍처 개선으로 서버 안정성과 자연스러운 인증 UX를 구현하는 법을 배웠습니다.",
+          "복잡한 실시간 금융 데이터를 다룰 때 전역 상태의 구독 범위를 세밀하게 제어하는 Selector 아키텍처와 렌더링 파이프라인 최적화의 필수성을 깊이 깨달았습니다.",
       },
     ],
   },
@@ -122,7 +124,6 @@ const PROJECTS_DATA = [
         learned:
           "사용자에게 안정감을 주는 인터페이스는 일관된 규격과 그리드 시스템에서 시작됨을 체감하였습니다.",
       },
-      // ✨ 핵심 트러블슈팅 업데이트: Lighthouse 성능 최적화 (73점 -> 87점)
       {
         title: "웹 자원 최적화를 통한 성능(Lighthouse) 개선 (73점 ➡️ 87점)",
         problem:
@@ -173,11 +174,11 @@ const PROJECTS_DATA = [
 
 function Projects() {
   const containerVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
@@ -200,8 +201,10 @@ function Projects() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex flex-col bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-[2rem] overflow-hidden"
+              // 갤럭시 A16 모바일 터치 슬라이드 먹통 현상 해결용 뷰포트/마진 조절
+              viewport={{ once: true, amount: 0.05, margin: "-30px 0px" }}
+              // 저사양 기기 GPU 하드웨어 가속 강제 활성화
+              className="flex flex-col bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-[2rem] overflow-hidden will-change-transform"
             >
               <div className="grid lg:grid-cols-2 gap-0 border-b border-gray-800">
                 <div className="relative p-6 md:p-10 flex items-center justify-center bg-gray-900/80">
@@ -310,7 +313,6 @@ function Projects() {
                           </h5>
                         </div>
                         <div className="p-5 flex flex-col gap-4 text-sm font-neo whitespace-pre-line">
-                          {/* whitespace-pre-line 클래스를 추가하여 solution 항목의 줄바꿈(\n)이 적용되도록 수정했습니다. */}
                           <div>
                             <span className="text-red-400 font-neoBold mb-1 block">
                               🔥 문제 발생
