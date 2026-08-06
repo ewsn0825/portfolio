@@ -1,89 +1,116 @@
-# 🚀 Largon Portfolio
+<div align="center">
 
-> **"비즈니스 가치를 코드로 번역하고, 끊김 없는 사용자 경험(UX)을 설계하는 프론트엔드 개발자 이재호(Largon)의 포트폴리오 웹사이트입니다."**
+# Largon Portfolio
 
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://largonportfolio.vercel.app/)
-[![React](https://img.shields.io/badge/React-18.2.0-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)]()
-[![Vite](https://img.shields.io/badge/Vite-5.2.0-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)]()
+### 비즈니스의 문제를 코드로 번역하고, 끊김 없는 경험을 설계하는 프론트엔드 개발자 이재호의 포트폴리오
 
-<br/>
+[![Live](https://img.shields.io/badge/Live-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)](https://largonportfolio.vercel.app/)
+[![React](https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## 🔗 Links
+[Portfolio](https://largonportfolio.vercel.app/) · [GitHub](https://github.com/ewsn0825/portfolio) · [TaskFlow](https://taskflow-kanban-rouge.vercel.app/)
 
-- **배포 주소:** [https://largonportfolio.vercel.app](https://largonportfolio.vercel.app)
-- **GitHub Repository:** [https://github.com/ewsn0825/portfolio](https://github.com/ewsn0825/portfolio)
+</div>
 
-<br/>
+## Overview
 
-## 🛠️ Tech Stack
+프로젝트의 구현 결과만 나열하지 않고, 문제를 어떻게 발견하고 해결했는지 보여 주는 단일 페이지 포트폴리오입니다. React 기반의 가벼운 인터랙션과 프로젝트별 기술 의사결정을 함께 담았습니다.
 
-| Category           | Stack                                                                                                                                                                                                                                                                                           |
-| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Core**           | ![React](https://img.shields.io/badge/react-%2320232a.svg?flat&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?flat&logo=vite&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?flat&logo=react-router&logoColor=white) |
-| **Styling**        | ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?flat&logo=tailwind-css&logoColor=white)                                                                                                                                                                                   |
-| **Animation & UI** | ![Framer Motion](https://img.shields.io/badge/framer--motion-0055FF?flat&logo=framer&logoColor=white) `react-scroll`, `lucide-react`                                                                                                                                                            |
-| **Tooling**        | ![Rome](https://img.shields.io/badge/Rome-E11E55?flat&logo=rome&logoColor=white) `ESLint`, `vite-plugin-svgr`                                                                                                                                                                                   |
+## Featured · TaskFlow
 
-<br/>
+> **웹과 모바일의 흐름을 하나로 연결한 개인용 칸반 보드**
 
-## ✨ Key Features
+TaskFlow는 보드·컬럼·카드를 직관적으로 구성하고, 빠른 드래그 앤 드롭과 낙관적 업데이트로 서버 응답을 기다리지 않는 조작 경험을 제공하는 개인 업무 관리 앱입니다.
 
-단일 페이지 애플리케이션(SPA)의 장점을 살려 매끄러운 스크롤 인터랙션과 함께 아래의 핵심 섹션들을 제공합니다.
+[서비스 보기](https://taskflow-kanban-rouge.vercel.app/) · [API 문서](https://kanban-board-app-pse5.onrender.com/api) · [GitHub](https://github.com/ewsn0825/kanban-board-app)
 
-- **Hero Section:** 3D 블러 파티클과 부드러운 텍스트 애니메이션이 적용된 직관적인 첫인상
-- **About:** 개발자로서의 핵심 가치관 및 인적사항
-- **Experience:** 학습 및 프로젝트 타임라인 시각화
-- **Skills:** `lucide-react` 아이콘과 함께 기술 스택 및 숙련도를 카테고리별로 구성
-- **Projects:** 개발한 주요 프로젝트의 상세 정보, 핵심 기능, 그리고 **트러블 슈팅 경험** 기록
-- **Contact:** 손쉬운 커뮤니케이션을 위한 연락처 및 소셜 링크 제공
+| 영역 | 구현 |
+| --- | --- |
+| Client | Expo, React Native Web, React 19, TypeScript |
+| 상태·통신 | TanStack Query, Zustand, Axios |
+| Server | NestJS 11, Prisma 7, PostgreSQL |
+| 인증 | Supabase Auth, ES256 JWT 검증 |
+| Deploy | Vercel, Render, Supabase |
 
-<br/>
+### Engineering highlights
 
-## 💥 Troubleshooting & Optimization
+- **마지막 의도 보존:** 카드별 이동 요청을 병합·직렬화해 빠르게 여러 번 드래그해도 사용자의 마지막 이동 결과가 유지되도록 했습니다.
+- **동시성 안전성:** PostgreSQL advisory lock과 트랜잭션, 임시 위치 전환으로 카드 순서 유니크 제약 충돌을 해결했습니다.
+- **즉각적인 반응과 복구:** 변경을 TanStack Query 캐시에 먼저 반영하고, 실패한 요청만 서버 상태로 동기화해 빠른 UX와 데이터 일관성을 함께 확보했습니다.
+- **필요한 데이터만:** 보드 목록은 메타데이터만 불러오고, 선택된 보드만 상세 조회합니다. 컬럼별 카드 맵은 `useMemo`로 재사용해 드래그 중 렌더링 비용을 줄였습니다.
 
-단순한 UI 구현을 넘어, **웹 렌더링 성능 최적화**와 **사용자 경험(UX) 개선**에 집중하여 Lighthouse 성능 점수를 **80점대(초록불)**로 최적화했습니다.
+```mermaid
+flowchart LR
+  Client["Expo · React Native Web\nMobile / Web"] --> Query["TanStack Query\nOptimistic cache"]
+  Client --> UI["Zustand\nUI state"]
+  Query --> API["NestJS API\nRender"]
+  Client --> Auth["Supabase Auth"]
+  Auth --> API
+  API --> Prisma["Prisma 7"]
+  Prisma --> DB[("Supabase\nPostgreSQL")]
+```
 
-### 1. 웹 폰트 최적화 및 렌더링 차단 리소스(Render-blocking) 제거
+## Portfolio experience
 
-- **문제:** 초기 빌드 시 대용량 한글 웹 폰트(눈누, 약 2MB 이상)로 인해 LCP(최대 콘텐츠 렌더링 시간)가 2.5초 이상 지연됨.
-- **해결:** 압축률이 높은 `woff2` 포맷의 다이나믹 서브셋 가변 폰트(Pretendard)로 교체하고, 미디어 쿼리 트릭(`media="print" onload="this.media='all'"`)을 활용하여 비동기 로딩을 구현해 폰트 파싱 지연 현상을 완벽히 해결했습니다.
+| 관심사 | 적용 |
+| --- | --- |
+| 빠른 첫 화면 | 정적인 Hero를 즉시 노출해 불필요한 800ms 로딩 지연을 제거했습니다. |
+| 점진적 로딩 | About, Experience, Skills, Projects, Contact를 독립적인 `Suspense` 경계로 분리해 무거운 프로젝트 섹션이 다른 콘텐츠를 막지 않게 했습니다. |
+| 스크롤 성능 | 내비게이션의 스크롤 처리를 `requestAnimationFrame`과 passive listener로 조정하고, 상태가 실제로 바뀔 때만 갱신합니다. |
+| 이미지 안정성 | 프로젝트 미리보기의 고정 비율 컨테이너와 `loading="lazy"`, `decoding="async"`로 레이아웃 흔들림과 초기 네트워크 부담을 낮췄습니다. |
+| 모바일 GPU | 비용이 큰 Hero blur 효과를 `md` 이상에서만 렌더링합니다. |
 
-### 2. React.lazy & Suspense를 활용한 Code Splitting
+## Tech stack
 
-- **문제:** 모든 섹션 컴포넌트(`About`, `Experience`, `Projects` 등)가 초기에 한 번에 로드되어 TBT(총 차단 시간)가 증가함.
-- **해결:** `React.lazy`를 도입해 스크롤 하단에 위치한 하위 섹션들을 비동기적으로 스플리팅하고, `<Suspense>`를 활용해 로딩 중 레이아웃 덜컹거림(CLS)을 방지하는 Skeleton UI(Fallback)를 적용했습니다.
+| Category | Stack |
+| --- | --- |
+| Core | React 18, Vite, React Router |
+| Styling | Tailwind CSS |
+| Motion & UI | Framer Motion, React Scroll, Lucide React |
+| Code quality | ESLint, Vite Plugin SVGR |
 
-### 3. 모바일 환경 렌더링(GPU) 부하 최적화
-
-- **문제:** 랜딩 페이지 배경에 적용된 `blur-[120px]` 효과가 모바일 테스트 환경에서 과도한 연산을 발생시켜 성능 저하 유발.
-- **해결:** 반응형 유틸리티(`hidden md:block`)를 적용해 모바일 뷰포트에서는 무거운 이펙트를 렌더링 트리에 포함하지 않도록 최적화했습니다. 추가로, 프로젝트 썸네일에 `loading="lazy"` 및 `decoding="async"`를 부여해 이미지 디코딩 병목을 해소했습니다.
-
-### 4. 스크롤 내비게이션 인디케이터 제어 흐름 분리
-
-- **문제:** `react-scroll`을 이용한 NavBar 메뉴 클릭 시, 타겟 섹션으로 이동하는 동안 거쳐 가는 모든 중간 섹션들이 순차적으로 활성화(spy)되어 UI가 깜빡이는 불안정성 발생.
-- **해결:** 강제 스크롤 중에는 불필요한 자동 업데이트 로직을 무시하도록 상태를 제어하여 사용자에게 안정적인 시각적 피드백을 제공했습니다.
-
-<br/>
-
-## 📂 Project Structure
-
-확장성과 유지보수성을 고려하여 페이지, 컴포넌트, 전역 설정 파일을 명확히 분리하여 설계했습니다.
+## Structure
 
 ```text
-📦 src
- ┣ 📂 assets        # 썸네일(WebP), 아이콘(SVG, vite-plugin-svgr 활용) 등 정적 리소스
- ┣ 📂 components    # 재사용 가능한 공통 UI (NavBar 등)
- ┣ 📂 pages         # 라우팅 및 스크롤 뷰 단위의 페이지 컴포넌트
- ┃ ┣ 📂 project     # 세부 프로젝트 관련 모듈
- ┃ ┣ 📜 Landing.jsx # 메인 히어로 섹션
- ┃ ┣ 📜 About.jsx, Projects.jsx, Skills.jsx ...
- ┃ ┗ 📜 RootLayout.jsx
- ┣ 📜 App.jsx       # 전역 상태 및 공통 레이아웃 래퍼
- ┣ 📜 main.jsx      # React Entry Point
- ┣ 📜 routes.jsx    # react-router-dom 라우팅 정의
- ┗ 📜 index.css     # Tailwind 지시어, 글로벌 애니메이션, 최적화된 폰트 정의
-⚙️ Configurations
- ┣ 📜 tailwind.config.js # 커스텀 테마, 폰트 패밀리(Pretendard 등) 설정
- ┣ 📜 vite.config.js     # 빌드 최적화 및 플러그인 설정
- ┗ 📜 rome.json          # Rome 기반의 빠르고 일관된 린팅/포매팅 규칙
+src/
+├── assets/                 # 이미지와 기술 아이콘
+├── components/
+│   ├── ProjectCard.jsx     # 재사용 가능한 프로젝트 상세 카드
+│   ├── TaskflowPreview.jsx # 코드로 구성한 TaskFlow 칸반 미리보기
+│   └── NavBar.jsx          # 스크롤 기반 내비게이션
+├── data/
+│   └── projects.js         # 프로젝트 콘텐츠와 링크를 한 곳에서 관리
+├── pages/
+│   ├── Landing.jsx         # Hero와 지연 로딩 섹션 경계
+│   └── About.jsx, Projects.jsx, Skills.jsx ...
+├── routes.jsx
+└── main.jsx
 ```
+
+## Run locally
+
+```bash
+git clone https://github.com/ewsn0825/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | 로컬 개발 서버 실행 |
+| `npm run build` | 프로덕션 빌드 생성 |
+| `npm run preview` | 빌드 결과 미리보기 |
+| `npm run lint` | ESLint 검사 |
+
+## Project timeline
+
+- **2026.07 – 2026.08** · TaskFlow — cross-platform 칸반 보드와 동시성 안전한 카드 정렬
+- **2026.04 – 2026.05** · Asset Dashboard — 실시간 자산 시각화와 낙관적 업데이트
+- **2024.05 – 2024.06 / 2026.05** · Largon Portfolio — 성능과 정보 전달을 다듬은 포트폴리오
+
+---
+
+<div align="center">
+  Built with care by <a href="https://github.com/ewsn0825">Largon</a>.
+</div>

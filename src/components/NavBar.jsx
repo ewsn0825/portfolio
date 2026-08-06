@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-scroll";
+
+const NAV_LINKS = ["about", "experience", "skills", "projects", "contact"];
 
 function NavBar() {
   const [isSticky, setSticky] = useState(false);
@@ -11,13 +13,36 @@ function NavBar() {
   const navRefs = useRef({});
   const isClickScrolling = useRef(false);
   const scrollTimeout = useRef(null);
+  const scrollFrame = useRef(null);
+  const stickyState = useRef(false);
 
-  const handleScroll = () => {
-    setSticky(window.scrollY > 10);
-  };
+  const updateIndicator = useCallback((to) => {
+    const activeElement = navRefs.current[to];
+    if (activeElement) {
+      setIndicatorStyle({
+        left: activeElement.offsetLeft,
+        width: activeElement.offsetWidth,
+        opacity: 1,
+      });
+    }
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    if (scrollFrame.current) return;
+
+    scrollFrame.current = window.requestAnimationFrame(() => {
+      const nextSticky = window.scrollY > 10;
+      if (stickyState.current !== nextSticky) {
+        stickyState.current = nextSticky;
+        setSticky(nextSticky);
+      }
+      scrollFrame.current = null;
+    });
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     // 리사이즈 시 인디케이터 위치 재조정 (화면 크기가 변할 때 선이 어긋나는 것 방지)
     const handleResize = () => {
@@ -33,19 +58,9 @@ function NavBar() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      if (scrollFrame.current) window.cancelAnimationFrame(scrollFrame.current);
     };
-  }, []);
-
-  const updateIndicator = (to) => {
-    const activeElement = navRefs.current[to];
-    if (activeElement) {
-      setIndicatorStyle({
-        left: activeElement.offsetLeft,
-        width: activeElement.offsetWidth,
-        opacity: 1,
-      });
-    }
-  };
+  }, [handleScroll, updateIndicator]);
 
   const handleSetActive = (to) => {
     if (isClickScrolling.current) return;
@@ -61,8 +76,6 @@ function NavBar() {
       isClickScrolling.current = false;
     }, 600);
   };
-
-  const navLinks = ["about", "experience", "skills", "projects", "contact"];
 
   return (
     <nav
@@ -86,7 +99,7 @@ function NavBar() {
         </Link>
 
         <ul className="relative flex flex-1 md:flex-none justify-between md:justify-end md:gap-10 items-center text-sm md:text-base font-medium">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <li
               key={link}
               className="py-2"

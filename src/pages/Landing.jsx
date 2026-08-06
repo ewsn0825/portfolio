@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import { Element, Link as ScrollLink } from "react-scroll";
-import { useState, useEffect, Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 
 // React.lazy를 사용하여 하위 컴포넌트들을 비동기적으로 불러옵니다.
 const About = lazy(() => import("./About"));
@@ -9,17 +9,18 @@ const Skills = lazy(() => import("./Skills"));
 const Projects = lazy(() => import("./Projects"));
 const Contact = lazy(() => import("./Contact"));
 
+function SectionFallback() {
+  return (
+    <div className="flex min-h-[20rem] w-full flex-col items-center justify-center bg-[#0a0b10]/50 animate-pulse">
+      <div className="mb-4 h-10 w-10 rounded-full border-4 border-cyan-500/30 border-t-cyan-500 animate-spin" />
+      <span className="text-sm font-medium tracking-widest text-cyan-500/50">
+        LOADING
+      </span>
+    </div>
+  );
+}
+
 function Landing() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 800);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="font-pre bg-[#050505] text-slate-200 min-h-screen relative overflow-x-hidden selection:bg-cyan-500/30">
       <Element name="header"></Element>
@@ -35,74 +36,52 @@ function Landing() {
         ></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
-        {/* 텍스트 컨텐츠 및 스켈레톤 (중앙 정렬) */}
-        {/* CLS(레이아웃 시프트) 방지를 위해 고정 최소 높이(min-h-[400px]) 부여 */}
+        {/* 정적 Hero는 지연 없이 즉시 노출해 LCP를 앞당깁니다. */}
         <div className="relative z-10 flex flex-col items-center justify-center gap-8 w-full max-w-4xl min-h-[400px]">
-          {!isLoaded ? (
-            <div className="flex flex-col items-center gap-8 w-full animate-pulse">
-              <div className="h-6 w-32 bg-gray-800 rounded-full"></div>
-
-              <div className="flex flex-col items-center gap-4 w-full">
-                <div className="h-14 md:h-20 w-3/4 md:w-2/3 bg-gray-800 rounded-xl"></div>
-                <div className="h-16 md:h-24 w-full md:w-4/5 bg-gray-800 rounded-xl"></div>
-              </div>
-
-              <div className="flex flex-col items-center gap-3 w-full max-w-2xl mt-4">
-                <div className="h-4 w-full bg-gray-800 rounded"></div>
-                <div className="h-4 w-5/6 bg-gray-800 rounded"></div>
-              </div>
-
-              <div className="flex gap-4 mt-4">
-                <div className="h-12 w-40 bg-gray-800 rounded-full"></div>
-                <div className="h-12 w-40 bg-gray-800 rounded-full"></div>
-              </div>
+          <div className="flex flex-col items-center gap-8">
+            <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-semibold tracking-widest text-cyan-400 uppercase">
+              Frontend Developer
             </div>
-          ) : (
-            <div className="flex flex-col items-center gap-8 transition-all duration-1000 transform translate-y-0 opacity-100">
-              <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-semibold tracking-widest text-cyan-400 uppercase">
-                Frontend Developer
-              </div>
 
-              <h1 className="text-center font-bold tracking-tighter">
-                <span className="block text-4xl md:text-6xl lg:text-7xl text-slate-300 mb-2">
-                  Crafting Digital
-                </span>
-                <span className="block text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 pb-2">
-                  Experiences.
-                </span>
-              </h1>
+            <h1 className="text-center font-bold tracking-tighter">
+              <span className="block text-4xl md:text-6xl lg:text-7xl text-slate-300 mb-2">
+                Crafting Digital
+              </span>
+              <span className="block text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 pb-2">
+                Experiences.
+              </span>
+            </h1>
 
-              <p className="text-slate-400 text-lg md:text-xl max-w-2xl text-center font-light leading-relaxed">
-                안녕하세요. 비즈니스 가치를 코드로 번역하는 개발자{" "}
-                <strong className="text-slate-200 font-semibold">
-                  Largon 이재호
-                </strong>
-                입니다. <br className="hidden md:block" />
-                데이터 중심의 아키텍처와 끊김 없는 사용자 경험을 설계합니다.
-              </p>
+            <p className="text-slate-400 text-lg md:text-xl max-w-2xl text-center font-light leading-relaxed">
+              안녕하세요. 비즈니스 가치를 코드로 번역하는 개발자{" "}
+              <strong className="text-slate-200 font-semibold">
+                Largon 이재호
+              </strong>
+              입니다. <br className="hidden md:block" />
+              데이터 중심의 아키텍처와 끊김 없는 사용자 경험을 설계합니다.
+            </p>
 
-              <div className="flex gap-4 mt-4">
-                <ScrollLink
-                  to="projects"
-                  smooth={true}
-                  duration={800}
-                  offset={-80}
-                  className="cursor-pointer px-8 py-4 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.4)]"
-                >
-                  View Projects
-                </ScrollLink>
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={800}
-                  offset={-80}
-                  className="cursor-pointer px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-colors"
-                >
-                  Contact Me
-                </ScrollLink>
-              </div>
+            <div className="flex gap-4 mt-4">
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={800}
+                offset={-80}
+                className="cursor-pointer px-8 py-4 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+              >
+                View Projects
+              </ScrollLink>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={800}
+                offset={-80}
+                className="cursor-pointer px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-colors"
+              >
+                Contact Me
+              </ScrollLink>
             </div>
-          )}
+          </div>
         </div>
 
         {/* 스크롤 버튼 */}
@@ -134,35 +113,33 @@ function Landing() {
         </div>
       </div>
 
-      {/* 하위 섹션들 렌더링: Suspense를 통해 비동기 로딩 관리 */}
+      {/* 독립 경계로 분리해 무거운 섹션이 다른 섹션의 표시를 막지 않도록 합니다. */}
       <div className="flex flex-col relative z-10 bg-[#050505]">
-        <Suspense
-          fallback={
-            // 성능 최적화: fallback 영역의 높이를 충분히 확보하여 화면 덜컹거림 최소화
-            <div className="w-full min-h-[800px] flex flex-col items-center justify-center animate-pulse bg-[#0a0b10]/50">
-              <div className="w-12 h-12 border-4 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
-              <span className="text-cyan-500/50 text-sm font-medium tracking-widest">
-                LOADING
-              </span>
-            </div>
-          }
-        >
-          <Element name="about">
+        <Element name="about">
+          <Suspense fallback={<SectionFallback />}>
             <About />
-          </Element>
-          <Element name="experience" className="bg-[#0a0b10]">
+          </Suspense>
+        </Element>
+        <Element name="experience" className="bg-[#0a0b10]">
+          <Suspense fallback={<SectionFallback />}>
             <Experience />
-          </Element>
-          <Element name="skills" className="bg-[#050505]">
+          </Suspense>
+        </Element>
+        <Element name="skills" className="bg-[#050505]">
+          <Suspense fallback={<SectionFallback />}>
             <Skills />
-          </Element>
-          <Element name="projects" className="bg-[#0a0b10]">
+          </Suspense>
+        </Element>
+        <Element name="projects" className="bg-[#0a0b10]">
+          <Suspense fallback={<SectionFallback />}>
             <Projects />
-          </Element>
-          <Element name="contact" className="bg-[#050505]">
+          </Suspense>
+        </Element>
+        <Element name="contact" className="bg-[#050505]">
+          <Suspense fallback={<SectionFallback />}>
             <Contact />
-          </Element>
-        </Suspense>
+          </Suspense>
+        </Element>
       </div>
     </div>
   );
