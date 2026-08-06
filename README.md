@@ -6,7 +6,7 @@
 
 [![Live](https://img.shields.io/badge/Live-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)](https://largonportfolio.vercel.app/)
 [![React](https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
 [Portfolio](https://largonportfolio.vercel.app/) · [GitHub](https://github.com/ewsn0825/portfolio) · [TaskFlow](https://taskflow-kanban-rouge.vercel.app/)
 
@@ -64,7 +64,7 @@ flowchart LR
 
 | Category | Stack |
 | --- | --- |
-| Core | React 18, Vite, React Router |
+| Core | React 18, Vite 7 |
 | Styling | Tailwind CSS |
 | Motion & UI | Framer Motion, React Scroll, Lucide React |
 | Code quality | ESLint, Vite Plugin SVGR |
@@ -82,7 +82,6 @@ src/
 ├── pages/
 │   ├── Landing.jsx         # Hero와 지연 로딩 섹션 경계
 │   └── About.jsx, Projects.jsx, Skills.jsx ...
-├── routes.jsx
 └── main.jsx
 ```
 

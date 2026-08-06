@@ -1,9 +1,14 @@
 import "./index.css";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes.jsx";
+import ScrollToTop from "./components/ScrollToTop";
+import Landing from "./pages/Landing";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <ScrollToTop />
+      <Landing />
+    </>
+  );
 }
 
 export default App;
