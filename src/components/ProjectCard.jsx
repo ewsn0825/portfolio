@@ -13,7 +13,7 @@ const CARD_VARIANTS = {
 function ProjectVisual({ project }) {
   return (
     <div
-      className={`w-full overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl ${
+      className={`w-full overflow-hidden rounded-2xl border border-slate-700/60 bg-[#111a2a] shadow-2xl ${
         project.featured
           ? "aspect-[4/3] sm:aspect-[16/10]"
           : "aspect-video"
