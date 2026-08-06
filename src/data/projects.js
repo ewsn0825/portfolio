@@ -1,5 +1,6 @@
 import assetDashboard from "@/assets/project/asset-dashboard.webp";
 import geppetto from "@/assets/project/geppetto.webp";
+import kanbanBoard from "@/assets/project/kanban-board.webp";
 import portfolio from "@/assets/project/portfolio.webp";
 
 export const PROJECTS = [
@@ -8,7 +9,9 @@ export const PROJECTS = [
     title: "TaskFlow",
     type: "개인 프로젝트",
     period: "2026.07 - 2026.08",
-    preview: "taskflow",
+    image: kanbanBoard,
+    featured: true,
+    highlight: "빠른 드래그에도 마지막 이동 의도를 보존하는 칸반 보드",
     description:
       "웹과 모바일에서 동일한 흐름으로 사용할 수 있는 개인 업무 관리 칸반 보드입니다. 빠른 드래그 앤 드롭, 낙관적 업데이트, 안전한 롤백을 결합해 서버 응답을 기다리지 않는 조작 경험을 설계했습니다.",
     techStack: [
@@ -95,6 +98,7 @@ export const PROJECTS = [
     type: "개인 프로젝트",
     period: "2026.04 - 2026.05",
     image: assetDashboard,
+    highlight: "실시간 금융 데이터에서 빠른 반응성과 정합성을 함께 설계",
     description:
       "실시간 자산 현황과 투자 포트폴리오를 시각화하는 대시보드입니다. 실제 주식 매수/매도 기능을 구현하며 외부 API 연동의 한계를 극복하고, 낙관적 업데이트 및 전역 상태 구조 리팩토링을 통해 대용량 데이터 환경에서의 렌더링 성능과 UX를 극대화했습니다.",
     techStack: [
@@ -175,6 +179,7 @@ export const PROJECTS = [
     type: "개인 프로젝트",
     period: "2024.05 - 2024.06 · 2026.05",
     image: portfolio,
+    highlight: "콘텐츠 전달력과 렌더링 성능을 함께 개선한 개인 포트폴리오",
     description:
       "저의 인적사항 및 기술 스택, 프로젝트들을 정리하기 위해 만든 반응형 포트폴리오 웹 사이트입니다. 부드러운 스크롤 인터랙션과 다크 테마 디자인을 적용했습니다.",
     techStack: ["React", "Tailwind CSS", "Framer Motion", "React Scroll"],
@@ -239,6 +244,7 @@ export const PROJECTS = [
     type: "멋쟁이 사자처럼 4인 프로젝트",
     period: "2023.09.02 - 2023.09.24",
     image: geppetto,
+    highlight: "첫 팀 프로젝트에서 경험한 재사용 가능한 컴포넌트 설계와 협업",
     description:
       "반려동물 커뮤니티 플랫폼으로, React의 아토믹 컴포넌트 패턴을 적용해 재사용성을 높이고 Zustand로 전역 상태를 구조화하여 확장 가능한 아키텍처를 설계했습니다. 포켓베이스(Pocketbase)를 활용해 백엔드 API부터 배포까지 전 과정을 팀원들과 협업하여 완성한 첫 번째 프로젝트입니다.",
     techStack: ["React", "Zustand", "Tailwind CSS", "Pocketbase", "Netlify"],

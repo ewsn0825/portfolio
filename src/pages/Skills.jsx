@@ -72,7 +72,7 @@ function Skills() {
     // 전체를 감싸는 section 태그 추가 (상하 여백 py-24 지정)
     <section id="skills" className="w-full py-24 text-white">
       {/* 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-5 md:px-12">
         {/* Section Title (시안색 마침표 추가) */}
         <div className="mb-12 border-b border-gray-800 pb-6">
           <h2 className="text-4xl md:text-5xl font-bold font-gm tracking-tight">
@@ -113,7 +113,7 @@ function Skills() {
                 {skill.descriptions.map((desc, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2 text-gray-400 text-sm md:text-base leading-relaxed"
+                    className="flex items-start gap-2 text-slate-300 text-[15px] md:text-base leading-relaxed"
                   >
                     <ChevronRight
                       className="w-4 h-4 text-cyan-500 mt-1 shrink-0"

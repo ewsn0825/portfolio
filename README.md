@@ -76,7 +76,6 @@ src/
 ├── assets/                 # 이미지와 기술 아이콘
 ├── components/
 │   ├── ProjectCard.jsx     # 재사용 가능한 프로젝트 상세 카드
-│   ├── TaskflowPreview.jsx # 코드로 구성한 TaskFlow 칸반 미리보기
 │   └── NavBar.jsx          # 스크롤 기반 내비게이션
 ├── data/
 │   └── projects.js         # 프로젝트 콘텐츠와 링크를 한 곳에서 관리

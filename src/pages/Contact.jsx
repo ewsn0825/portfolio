@@ -9,13 +9,13 @@ function Contact() {
       className="w-full bg-[#050505] border-t border-gray-800"
     >
       {/* ✨ 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-24 flex flex-col items-center gap-12">
+      <div className="w-full max-w-[1200px] mx-auto px-5 md:px-12 py-20 md:py-24 flex flex-col items-center gap-10 md:gap-12">
         {/* 타이틀 영역 */}
         <div className="text-center flex flex-col gap-3">
           <h2 className="font-gm text-4xl font-bold text-white tracking-wider">
             Contact<span className="text-cyan-500">.</span>
           </h2>
-          <p className="text-gray-400 font-neo text-sm">
+          <p className="text-slate-300 font-neo text-[15px]">
             더 많은 이야기와 코드는 아래 링크에서 확인하실 수 있습니다.
           </p>
         </div>

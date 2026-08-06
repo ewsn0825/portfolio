@@ -7,7 +7,7 @@ function About() {
     // ✨ 1. 전체를 감싸는 section 태그 추가 (상하 여백 py-24 지정)
     <section className="w-full py-24 text-white">
       {/* ✨ 2. 약속한 공통 레이아웃 컨테이너: 1200px 고정, 좌우 여백 통일 */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-5 md:px-12">
         {/* Section Title */}
         <div className="mb-12 border-b border-gray-800 pb-6">
           <h2 className="text-4xl md:text-5xl font-bold font-gm tracking-tight">
@@ -40,7 +40,7 @@ function About() {
                 <br className="hidden md:block" />
                 <span className="text-cyan-400">Largon 이재호</span>입니다.
               </h3>
-              <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+              <p className="text-slate-300 leading-7 text-[15px] md:text-base md:leading-relaxed">
                 불필요한 과정을 덜어내는 효율성(Argon)과 조급해하지 않고 꾸준히
                 나아가는 템포(Largo)를 지향합니다. 사용자에게 매끄러운 디지털
                 경험을 제공하기 위해 최적의 코드를 고민하며 끝없이 성장하고

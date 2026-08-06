@@ -4,7 +4,7 @@ import { Calendar, CheckCircle2 } from "lucide-react";
 function Experience() {
   return (
     <section className="w-full py-24 text-white">
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-5 md:px-12">
         <div className="mb-12 border-b border-gray-800 pb-6">
           <h2 className="text-4xl md:text-5xl font-bold font-gm tracking-tight">
             Experience<span className="text-cyan-500">.</span>
@@ -29,7 +29,7 @@ function Experience() {
                 </div>
               </div>
 
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-slate-300 mb-6 text-[15px] leading-7 md:text-base md:leading-relaxed">
                 농협은행 신탁자산운용 플랫폼 고도화를 위한 프로젝트에
                 참여하였습니다. 넥사크로 플랫폼을 사용한 화면 개발을 수행했으며,
                 크로닉스 리포트(Cronix Report)를 활용하여 데이터를 시각화하고
@@ -46,7 +46,7 @@ function Experience() {
                   (tech) => (
                     <li
                       key={tech}
-                      className="flex items-center gap-1.5 text-sm text-gray-300 bg-gray-800/60 border border-gray-700/50 px-3 py-1.5 rounded-md"
+                      className="flex items-center gap-1.5 text-[13px] text-slate-200 bg-gray-800/60 border border-gray-700/50 px-3 py-1.5 rounded-md"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-500" />
                       {tech}
@@ -70,7 +70,7 @@ function Experience() {
                   <span>2023.05 ~ 2023.09</span>
                 </div>
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-slate-300 mb-6 text-[15px] leading-7 md:text-base md:leading-relaxed">
                 집중적인 프론트엔드 개발 교육 과정을 통해 웹 개발의 기반을
                 다지고 실무 역량을 키웠습니다.
               </p>
@@ -78,7 +78,7 @@ function Experience() {
                 {["HTML5", "CSS", "JavaScript", "React"].map((tech) => (
                   <li
                     key={tech}
-                    className="flex items-center gap-1.5 text-sm text-gray-300 bg-gray-800/60 border border-gray-700/50 px-3 py-1.5 rounded-md"
+                    className="flex items-center gap-1.5 text-[13px] text-slate-200 bg-gray-800/60 border border-gray-700/50 px-3 py-1.5 rounded-md"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-500" />
                     {tech}
