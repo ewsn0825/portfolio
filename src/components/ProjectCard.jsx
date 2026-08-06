@@ -22,9 +22,7 @@ function ProjectVisual({ project }) {
       <img
         src={project.image}
         alt={`${project.title} 프로젝트 화면`}
-        className={`h-full w-full ${
-          project.featured ? "object-cover object-center" : "object-contain"
-        }`}
+        className="h-full w-full object-contain"
         loading="lazy"
         decoding="async"
       />
